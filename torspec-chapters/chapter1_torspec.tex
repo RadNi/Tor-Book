@@ -12,7 +12,7 @@ Every Tor relay has multiple public/private keypairs. As referenced in chapter \
 		\item A long-term signing-only "Identity key" used to sign documents and certificates, and used to establish relay identity.
 		\item A medium-term TAP "Onion key" used to decrypt onion skins when accepting circuit extend attempts.%TODO reference section 5 here  
 		Old keys MUST be accepted for a while after they are no longer advertised.  Because of this, relays MUST retain old keys for a while after they're rotated. (See "onion key lifetime parameters" in dir-spec.txt.) %TODO reference needed
-		\item A short-term "Connection key" used to negotiate TLS connections. Tor implementations MAY rotate this key as often as they like, and SHOULD rotate this key at least once a day.
+		\item A short-term "Connection key" used to negotiate TLS connections. Tor implementations MAY rotate this key as often as they like, and SHOULD rotate this key at least once a day. \ref{Key:connection-key}
 	\end{itemize}
 	\item [Curve25519 key] :
 	\begin{itemize}

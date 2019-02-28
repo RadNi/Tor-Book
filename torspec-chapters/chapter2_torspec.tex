@@ -184,21 +184,87 @@ Connections between two Tor relays, or between a client and a relay, use TLS/SSL
    There are three ways to perform TLS handshakes with a Tor server. 
    
    \begin{enumerate}
+	\itemsep0.5em
    	\item \textbf{certificates-up-front}: Both the initiator and responder send a two-certificate chain as part of their initial handshake.  (This is supported in all Tor versions.)
    	\item \textbf{renegotiation}: The responder provides a single certificate, and the initiator immediately performs a TLS renegotiation. (This is supported in Tor 0.2.0.21 and later.)
    	\item \textbf{in-protocol}: the initial TLS negotiation completes, and the parties bootstrap themselves to mutual authentication via use of the Tor protocol without further TLS handshaking. (This is supported in 0.2.3.6-alpha and later.)
    \end{enumerate}
    
-  Each of these options provides a way for the parties to learn it is
+Each of these options provides a way for the parties to learn it is
    available: a client does not need to know the version of the Tor
    server in order to connect to it properly.
+   \\
+   
+\label{Key:connection-key} In "certificates up-front" (a.k.a "the v1 handshake"), the connection initiator always sends a two-certificate chain, consisting of an X.509 certificate using a short-term connection public key and a second, self-signed X.509 certificate containing its identity key. The other party sends a similar certificate chain. The initiator's ClientHello MUST NOT include any ciphersuites other than:
+\begin{enumerate}
+	\item TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA
+	\item TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA
+	\item SSL\_DHE\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA
+\end{enumerate}
+
+In "renegotiation" (a.k.a. "the v2 handshake"), the connection initiator sends no certificates, and the responder sends a single connection certificate.  Once the TLS handshake is complete, the initiator renegotiates the handshake, with each party sending a two-certificate chain as in "certificates up-front". The initiator's ClientHello MUST include at least one ciphersuite not in the list above -- that's how the initiator indicates that it can handle this handshake.  For other considerations on the initiator's ClientHello, see section 2.1 below.
+
+In "in-protocol" (a.k.a. "the v3 handshake"), the initiator sends no certificates, and the responder sends a single connection certificate.  The choice of ciphersuites must be as in a "renegotiation" handshake.  There are additionally a set of constraints on the connection certificate, which the initiator can use to learn that the in-protocol handshake is in use.
+\\
+These are some usefull fields in the structure of an X.509 v3 
+certificate according to \cite{crl_rfc}:
+
+\begin{lstlisting}[language=c, caption={X.509 v3 Certificate structure}]
+Certificate  ::=  SEQUENCE  {
+        tbsCertificate       TBSCertificate,
+        signatureAlgorithm   AlgorithmIdentifier,
+        signatureValue       BIT STRING  }
+
+   TBSCertificate  ::=  SEQUENCE  {
+        version         [0]  EXPLICIT Version DEFAULT v1,
+        serialNumber         CertificateSerialNumber,
+        signature            AlgorithmIdentifier,
+        issuer               Name,
+        validity             Validity,
+        subject              Name,
+        subjectPublicKeyInfo SubjectPublicKeyInfo,
+        issuerUniqueID  [1]  IMPLICIT UniqueIdentifier OPTIONAL,
+                             -- If present, version MUST be v2 or v3
+        subjectUniqueID [2]  IMPLICIT UniqueIdentifier OPTIONAL,
+                             -- If present, version MUST be v2 or v3
+        extensions      [3]  EXPLICIT Extensions OPTIONAL
+                             -- If present, version MUST be v3
+        }
+\end{lstlisting}
+
+\textbf{issuer}
+\\
+The issuer field identifies the entity that has signed and issued the certificate.  The issuer field MUST contain a non-empty distinguished name (DN).  The issuer field is defined as the X.501 type Name.
+\\
+
+Implementations of this specification MUST be prepared to receive the following standard attribute types in issuer and subject (Section 4.1.2.6 of \cite{crl_rfc} ) names:
+\begin{enumerate}
+	\item country
+	\item organization
+	\item organizational unit
+	\item distinguished name qualifier (DN)
+	\item state or province name
+	\item common name (e.g., "Susan Housley")
+	\item serial number
+\end{enumerate}
+
+Specifically, at least one of these properties must be true of the certificate:
+\begin{enumerate}
+	\item The certificate is self-signed
+	\item Some component other than "commonName" is set in the subject or issuer DN of the certificate.
+	\item The commonName of the subject or issuer of the certificate ends with a suffix other than ".net".
+	\item The certificate's public key modulus is longer than 1024 bits.
+\end{enumerate}
   
-  
-  
-  
-  
-  
-  
+Here is implementation of in-protocol handshake through the Tor source code:
+
+\begin{lstlisting}[language=c, caption={\href{https://gitweb.torproject.org/tor.git/tree/src/lib/tls/tortls.c}{in-protocol implementation} line number 287 }]
+int
+tor_tls_context_init_certificates(tor_tls_context_t *result,
+                                  crypto_pk_t *identity,
+                                  unsigned key_lifetime,
+                                  unsigned flags)
+\end{lstlisting}
   
   
   
