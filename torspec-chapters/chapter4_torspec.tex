@@ -1,7 +1,476 @@
 \chapter{Negotiating and initializing connections}
 
-\section{Theorems}
 
-\begin{align*}
-    \frac{1}{2}
-\end{align*}
+\paragraph{}
+After Tor instances negotiate handshake with either the
+"renegotiation"(v2) or "in-protocol"(v3) handshakes, they must exchange
+a number of cells to set up the Tor connection  and make it
+open and usable for circuits.
+
+\paragraph{}
+When the \textbf{renegotiation} handshake is used,
+\begin{itemize}
+    \item Both parties immediately send a VERSIONS cell.
+    \item A link protocol version is negotiated (which will be 2).
+    \item Each send a NETINFO cell to confirm their addresses and timestamps.
+\end{itemize}
+No other intervening cell types are allowed.
+
+\paragraph{}
+When the \textbf{in-protocol} handshake is used,
+\begin{itemize}
+    \item the initiator sends a VERSIONS cell to indicate that it will not be renegotiating.
+    \item The responder sends
+    \begin{itemize}
+        \item a VERSIONS cell, a CERTS cell to give the
+        initiator the certificates it needs to learn the responder's
+        identity.
+        \item an AUTH\_CHALLENGE cell that the initiator must include
+        as part of its answer if it chooses to authenticate.
+        \item a NETINFO cell
+    \end{itemize}
+    \item As soon as it gets the CERTS cell, the initiator knows
+    whether the responder is correctly authenticated. At this point the
+    initiator behaves differently depending on whether it wants to
+    authenticate or not.
+    \begin{itemize}
+        \item If it does not want to authenticate, it MUST send a NETINFO cell.
+        \item If it does want to authenticate, it MUST send a CERTS cell,
+        an AUTHENTICATE cell, and a NETINFO cell.
+    \end{itemize}
+\end{itemize}
+When this handshake is in use, the first cell must be VERSIONS, VPADDING, or
+AUTHORIZE, and no other cell type is allowed to intervene besides
+those specified, except for VPADDING cells.
+
+\paragraph{}
+[Tor versions before 0.2.3.11-alpha did not recognize the AUTHORIZE cell,
+and did not permit any command other than VERSIONS as the first cell of
+the in-protocol handshake.]
+
+
+\section{Negotiating versions with VERSIONS cells}
+There are multiple instances of the Tor link connection protocol.
+\begin{itemize}
+    \item
+    Any connection negotiated using the "certificates up front" handshake (see
+    section 2 above) is "version 1".
+    \item In any connection where both parties
+    have behaved as in the "renegotiation" handshake, the link protocol
+    version must be 2.
+    \item In any connection where both parties have behaved
+    as in the "in-protocol" handshake, the link protocol must be 3 or higher.
+\end{itemize}
+
+\paragraph{}
+To determine the version, in any connection where the "renegotiation"
+or "in-protocol" handshake was used (that is, where the responder
+sent only one certificate at first and where the initiator did not
+send any certificates in the first negotiation), both parties MUST
+send a VERSIONS cell.
+\begin{itemize}
+    \item
+    In "renegotiation", they send a VERSIONS cell
+    right after the renegotiation is finished, before any other cells are
+    sent.
+    \item In "in-protocol", the initiator sends a VERSIONS cell
+    immediately after the initial TLS handshake, and the responder
+    replies immediately with a VERSIONS cell. (As an exception to this rule,
+    if both sides support the "in-protocol" handshake, either side may send
+    VPADDING cells at any time.)
+\end{itemize}
+
+\paragraph{}
+The payload in a VERSIONS cell is a series of big-endian two-byte
+integers. Both parties MUST select as the link protocol version the
+highest number contained both in the VERSIONS cell they sent and in the
+versions cell they received. If they have no such version in common,
+they cannot communicate and MUST close the connection. Either party MUST
+close the connection if the versions cell is not well-formed (for example,
+if it contains an odd number of bytes)
+
+\paragraph{}
+Any VERSIONS cells sent after the first VERSIONS cell MUST be ignored.
+(To be interpreted correctly, later VERSIONS cells MUST have a CIRCID\_LEN
+matching the version negotiated with the first VERSIONS cell.)
+
+
+\paragraph{}
+Since the version 1 link protocol does not use the "renegotiation"
+handshake, implementations MUST NOT list version 1 in their VERSIONS
+cell. When the "renegotiation" handshake is used, implementations
+MUST list only the version 2. When the "in-protocol" handshake is
+used, implementations MUST NOT list any version before 3, and SHOULD
+list at least version 3.
+
+\paragraph{}
+Link protocols differences are:
+\begin{enumerate}
+    \item The "certs up front" handshake.
+    \item Uses the renegotiation-based handshake. Introduces
+          variable-length cells.
+    \item Uses the in-protocol handshake.
+    \item Increases circuit ID width to 4 bytes.
+    \item Adds support for link padding and negotiation (padding-spec.txt).
+\end{enumerate}
+
+
+\section{CERTS cells}
+The CERTS cell describes the keys that a Tor instance is claiming
+to have. It is a variable-length cell. Its payload format is:
+
+\begin{verbatim}
+N: Number of certs in cell [1 octet]
+N times:    CertType [1 octet]
+            CLEN [2 octets]
+            Certificate [CLEN octets]
+\end{verbatim}
+
+\paragraph{}
+Any extra octets at the end of a CERTS cell MUST be ignored.
+
+\paragraph{}
+Relevant certType values are:
+\begin{enumerate}
+    \item Link key certificate certified by RSA1024 identity
+    \item RSA1024 Identity certificate, self-signed.
+    \item RSA1024 AUTHENTICATE cell link certificate, signed with RSA1024 key.
+    \item Ed25519 signing key, signed with identity key.
+    \item TLS link certificate, signed with ed25519 signing key.
+    \item Ed25519 AUTHENTICATE cell key, signed with ed25519 signing key.
+    \item Ed25519 identity, signed with RSA identity.
+\end{enumerate}
+
+\paragraph{}
+The certificate format for certificate types 1-3 is DER encoded
+X509. For types 4-6 ED25519 encoding is used. For type 7 RSA CrossCert
+encoding is used.
+
+\paragraph{X509 certificated encoding}
+
+In cryptography, X.509 is a standard defining the format of public key certificates.
+X.509 certificates are used in many Internet protocols, including TLS/SSL, which is
+the basis for HTTPS, the secure protocol for browsing the web. They are also used
+in offline applications, like electronic signatures. An X.509 certificate contains a
+public key and an identity (a hostname, or an organization, or an individual), and
+is either signed by a certificate authority or self-signed. When a certificate is
+signed by a trusted certificate authority, or validated by other means, someone holding
+that certificate can rely on the public key it contains to establish secure communications
+with another party, or validate documents digitally signed by the corresponding private key.
+
+\paragraph{ED25519 encoding}
+
+This encoding has the following structure:
+
+\begin{verbatim}
+struct ed25519_cert_st {
+    uint8_t version;
+    uint8_t cert_type;
+    uint32_t exp_field;
+    uint8_t cert_key_type;
+    uint8_t certified_key[32];
+    uint8_t n_extensions;
+    TRUNNEL_DYNARRAY_HEAD(, struct ed25519_cert_extension_st *) ext;
+    uint8_t signature[64];
+    uint8_t trunnel_error_code_;
+};
+\end{verbatim}
+
+\paragraph{}
+Note: A CERTS cell may have no more than one certificate of each CertType.
+
+\paragraph{}
+To authenticate \textbf{the responder}, \textbf{the initiator} must check a set of conditions ,
+based on which of these cases has happened:
+
+\begin{enumerate}
+    \item having a given Ed25519, RSA identity key combination
+        \begin{itemize}
+            \item The CERTS cell contains exactly one CertType 2 "ID" certificate.
+            \item The CERTS cell contains exactly one CertType 4 Ed25519
+            "Id->Signing" cert.
+            \item The CERTS cell contains exactly one CertType 5 Ed25519
+            "Signing->link" certificate.
+            \item The CERTS cell contains exactly one CertType 7 "RSA->Ed25519"
+            cross-certificate.
+            \item All X.509 certificates above have validAfter and validUntil dates;
+            no X.509 or Ed25519 certificates are expired.
+            \item All certificates are correctly signed.
+            \item The certified key in the Signing->Link certificate matches the
+            SHA256 digest of the certificate that was used to
+            authenticate the TLS connection.
+            \item The identity key listed in the ID->Signing cert was used to
+            sign the ID->Signing Cert.
+            \item The Signing->Link cert was signed with the Signing key listed
+            in the ID->Signing cert.
+            \item The RSA->Ed25519 cross-certificate certifies the Ed25519
+            identity, and is signed with the RSA identity listed in the
+            "ID" certificate.
+            \item The certified key in the ID certificate is a 1024-bit RSA key.
+            \item The RSA ID certificate is correctly self-signed. 
+        \end{itemize}
+    \item having a given RSA identity only
+        \begin{itemize}
+            \item The CERTS cell contains exactly one CertType 1 "Link" certificate.
+            \item The CERTS cell contains exactly one CertType 2 "ID" certificate.
+            \item Both certificates have validAfter and validUntil dates that
+            are not expired.
+            \item The certified key in the Link certificate matches the
+            link key that was used to negotiate the TLS connection.
+            \item The certified key in the ID certificate is a 1024-bit RSA key.
+            \item The certified key in the ID certificate was used to sign both
+            certificates.
+            \item The link certificate is correctly signed with the key in the
+            ID certificate
+            \item The ID certificate is correctly self-signed
+        \end{itemize}
+\end{enumerate}
+
+
+\paragraph{}
+In both cases above, checking these conditions is sufficient to
+authenticate that the initiator is talking to the Tor node with the
+expected identity, as certified in the ID certificate(s).
+
+\paragraph{}
+To authenticate \textbf{the initiator}, \textbf{the responder} must check a set of conditions ,
+based on which of these cases has happened:
+
+\begin{enumerate}
+    \item having a given Ed25519, RSA identity key combination
+        \begin{itemize}
+            \item The CERTS cell contains exactly one CertType 2 "ID" certificate.
+            \item The CERTS cell contains exactly one CertType 4 Ed25519
+            "Id->Signing" certificate.
+            \item The CERTS cell contains exactly one CertType 6 Ed25519
+            "Signing->auth" certificate.
+            \item The CERTS cell contains exactly one CertType 7 "RSA->Ed25519"
+            cross-certificate.
+            \item All X.509 certificates above have validAfter and validUntil dates;
+            no X.509 or Ed25519 certificates are expired.
+            \item All certificates are correctly signed.
+            \item The identity key listed in the ID->Signing cert was used to
+            sign the ID->Signing Cert.
+            \item The Signing->AUTH cert was signed with the Signing key listed
+            in the ID->Signing cert.
+            \item The RSA->Ed25519 cross-certificate certifies the Ed25519
+            identity, and is signed with the RSA identity listed in the
+            "ID" certificate.
+            \item The certified key in the ID certificate is a 1024-bit RSA key.
+            \item The RSA ID certificate is correctly self-signed.
+        \end{itemize}
+    \item having a given RSA identity only
+        \begin{itemize}
+            \item The CERTS cell contains exactly one CertType 3 "AUTH" certificate.
+            \item The CERTS cell contains exactly one CertType 2 "ID" certificate.
+            \item Both certificates have validAfter and validUntil dates that
+            are not expired.
+            \item The certified key in the AUTH certificate is a 1024-bit RSA key.
+            \item The certified key in the ID certificate is a 1024-bit RSA key.
+            \item The certified key in the ID certificate was used to sign both
+            certificates.
+            \item The auth certificate is correctly signed with the key in the
+            ID certificate.
+            \item The ID certificate is correctly self-signed.
+        \end{itemize}
+\end{enumerate}
+
+\paragraph{}
+Checking these conditions is NOT sufficient to authenticate that the
+initiator has the ID it claims; to do so, AUTH\_CHALLENGE and AUTHENTICATE cells
+must be exchanged.
+
+\section{AUTH\_CHALLENGE cells}
+
+An AUTH\_CHALLENGE cell is a variable-length cell with the following
+fields:
+
+\begin{verbatim}
+    Challenge [32 octets]
+    N_Methods [2 octets]
+    Methods   [2 * N_Methods octets]
+\end{verbatim}
+
+\paragraph{}
+It is sent from the responder to the initiator. Initiators MUST
+ignore unexpected bytes at the end of the cell. Responders MUST
+generate every challenge independently using a strong RNG or PRNG.
+
+\paragraph{}
+The Challenge field is a randomly generated string that the
+initiator must sign (a hash of) as part of authenticating. The
+methods are the authentication methods that the responder will
+accept. Only two authentication methods are defined right now:
+RSA-SHA256-TLSSecret and Ed25519-SHA256-RFC5705.
+
+\section{AUTHENTICATE cells}
+
+If an initiator wants to authenticate, it responds to the
+AUTH\_CHALLENGE cell with a CERTS cell and an AUTHENTICATE cell.
+The CERTS cell is as a server would send, except that instead of
+sending a CertType 1 (and possibly CertType 5) certs for arbitrary link
+certificates, the initiator sends a CertType 3 (and possibly
+CertType 6) cert for an RSA/Ed25519 AUTHENTICATE key.
+This difference is because we allow any link key type on a TLS
+link, but the protocol described here will only work for specific key
+types as described in 4.4.1 and 4.4.2 below.
+
+\paragraph{}
+An AUTHENTICATE cell contains the following:
+\begin{verbatim}
+    AuthType [2 octets]
+    AuthLen [2 octets]
+    Authentication [AuthLen octets]
+\end{verbatim}
+
+\paragraph{}
+Responders MUST ignore extra bytes at the end of an AUTHENTICATE
+cell. Recognized AuthTypes are 1 and 3, described in the next
+two sections.
+
+\paragraph{}
+Initiators MUST NOT send an AUTHENTICATE cell before they have
+verified the certificates presented in the responder's CERTS
+cell, and authenticated the responder.
+
+\subsection{Link authentication type 1: RSA-SHA256-TLSSecret}
+
+If AuthType is 1 (meaning "RSA-SHA256-TLSSecret"), then the
+Authentication field of the AUTHENTICATE cell contains the following:
+
+\begin{itemize}
+    \item TYPE: The characters "AUTH0001" [8 octets]
+    \item CID: A SHA256 hash of the initiator's RSA1024 identity key [32 octets]
+    \item SID: A SHA256 hash of the responder's RSA1024 identity key [32 octets]
+    \item SLOG: A SHA256 hash of all bytes sent from the responder to the
+    initiator as part of the negotiation up to and including the
+    AUTH\_CHALLENGE cell; that is, the VERSIONS cell, the CERTS cell,
+    the AUTH\_CHALLENGE cell, and any padding cells. [32 octets]
+    \item CLOG: A SHA256 hash of all bytes sent from the initiator to the
+    responder as part of the negotiation so far; that is, the
+    VERSIONS cell and the CERTS cell and any padding cells. [32
+    octets]
+    \item SCERT: A SHA256 hash of the responder's TLS link certificate. [32
+    octets]
+    \item TLSSECRETS: A SHA256 HMAC, using the TLS master secret as the
+    secret key, of the following:
+    \begin{itemize}
+        \item client\_random, as sent in the TLS Client Hello
+        \item server\_random, as sent in the TLS Server Hello
+        \item the NUL terminated ASCII string:
+        \newline
+        "Tor V3 handshake TLS cross-certification"
+    \end{itemize} [32 octets]
+    \item RAND: A 24 byte value, randomly chosen by the initiator. (In an
+    imitation of SSL3's gmt\_unix\_time field, older versions of Tor
+    sent an 8-byte timestamp as the first 8 bytes of this field;
+    new implementations should not do that.) [24 octets]
+    \item SIG: A signature of a SHA256 hash of all the previous fields
+    using the initiator's "Authenticate" key as presented. (As
+    always in Tor, we use OAEP-MGF1 padding; see tor-spec.txt
+    section 0.3.)
+    [variable length]
+\end{itemize}
+
+\paragraph{}
+To check the AUTHENTICATE cell, a responder checks that all fields
+from TYPE through TLSSECRETS contain their unique
+correct values as described above, and then verifies the signature.
+The server MUST ignore any extra bytes in the signed data after
+the RAND field.
+
+\paragraph{}
+Responders MUST NOT accept this AuthType if the initiator has
+claimed to have an Ed25519 identity.
+
+\subsection{Link authentication type 3: Ed25519-SHA256-RFC5705}
+
+\paragraph{}
+If AuthType is 3, meaning "Ed25519-SHA256-RFC5705", the
+Authentication field of the AuthType cell is as below:
+
+\paragraph{}
+Modified values and new fields below are marked with asterisks.
+
+\begin{itemize}
+    \item TYPE: The characters "AUTH0003" [8 octets]
+    \item CID: A SHA256 hash of the initiator's RSA1024 identity key [32 octets]
+    \item SID: A SHA256 hash of the responder's RSA1024 identity key [32 octets]
+    \item CID\_ED: The initiator's Ed25519 identity key [32 octets]
+    \item SID\_ED: The responder's Ed25519 identity key, or all-zero. [32 octets]
+    \item SLOG: A SHA256 hash of all bytes sent from the responder to the
+    initiator as part of the negotiation up to and including the
+    AUTH\_CHALLENGE cell; that is, the VERSIONS cell, the CERTS cell,
+    the AUTH\_CHALLENGE cell, and any padding cells. [32 octets]
+    \item CLOG: A SHA256 hash of all bytes sent from the initiator to the
+    responder as part of the negotiation so far; that is, the
+    VERSIONS cell and the CERTS cell and any padding cells. [32
+    octets]
+    \item SCERT: A SHA256 hash of the responder's TLS link certificate. [32
+    octets]
+    \item TLSSECRETS: The output of an RFC5705 Exporter function on the
+    TLS session, using as its inputs:
+    \begin{itemize}
+        \item The label string "EXPORTER FOR TOR TLS CLIENT BINDING AUTH0003"
+        \item The context value equal to the initiator's Ed25519 identity key.
+        \item The length 32.
+    \end{itemize}[32 octets]
+    \item RAND: A 24 byte value, randomly chosen by the initiator. [24 octets]
+    \item SIG: A signature of all previous fields using the initiator's
+    Ed25519 authentication key (as in the cert with CertType 6).
+    [variable length]
+\end{itemize}
+
+\paragraph{}
+To check the AUTHENTICATE cell, a responder checks that all fields
+from TYPE through TLSSECRETS contain their unique
+correct values as described above, and then verifies the signature.
+The server MUST ignore any extra bytes in the signed data after
+the RAND field.
+
+\section{NETINFO cells}
+
+If version 2 or higher is negotiated, each party sends the other a
+NETINFO cell. The cell's payload is:
+
+\begin{verbatim}
+    TIME (Timestamp) [4 bytes]
+    OTHERADDR (Other OR's address) [variable]
+        ATYPE (Address type) [1 byte]
+        ALEN (Adress length) [1 byte]
+        AVAL (Address value in NBO) [ALEN bytes]
+    NMYADDR (Number of this OR's addresses) [1 byte]
+    NMYADDR times:
+        ATYPE (Address type) [1 byte]
+        ALEN (Adress length) [1 byte]
+        AVAL (Address value in NBO)) [ALEN bytes]
+\end{verbatim}
+
+\paragraph{}
+Recognized address types (ATYPE) are:
+\begin{verbatim}
+    [04] IPv4.
+    [06] IPv6.
+\end{verbatim}
+
+\paragraph{}
+ALEN MUST be 4 when ATYPE is 0x04 (IPv4) and 16 when ATYPE is 0x06
+(IPv6).
+
+\paragraph{}
+The timestamp is a big-endian unsigned integer number of seconds
+since the Unix epoch. Implementations MUST ignore unexpected bytes
+at the end of the cell.
+
+\paragraph{}
+Implementations MAY use the timestamp value to help decide if their
+clocks are skewed. Initiators MAY use "other OR's address" to help
+learn which address their connections may be originating from, if they do
+not know it; and to learn whether the peer will treat the current
+connection as canonical. Implementations SHOULD NOT trust these
+values unconditionally, especially when they come from non-authorities,
+since the other party can lie about the time or IP addresses it sees.
+
+\paragraph{}
+Initiators SHOULD use "this OR's address" to make sure
+that they have connected to another OR at its canonical address.
