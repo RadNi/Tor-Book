@@ -1,49 +1,30 @@
 \chapterimage{chapter_head_2.pdf} % Chapter heading image
 
-\chapter{Preliminaries}
+\chapter{System Overview}
 
-\section{Ciphers}
-%\index{Paragraphs of Text}
-\subsection{Stream Cipher}
-For stream ciphers Tor uses 128-bit AES in counter mode, with an IV of all 0 bytes.
-\\
-In section \ref{sec:AES} we provide some notes about AES counter mode. Tor usage for AES counter mode with EVP APIs is located \href{https://gitweb.torproject.org/tor.git/tree/src/lib/crypt_ops/aes_openssl.c}{here} .
-\\
-For a public-key cipher, uses RSA with 1024-bit keys and a fixed exponent of 65537 and OAEP-MGF1 padding format, with SHA-1 as its digest function. Further information about RSA explained in section \ref{sec:RSA}.
+Tor is a distributed overlay network designed to anonymize low-latency TCP-based applications such as web browsing, secure shell, and instant messaging. Clients choose a path through the network and build a circuit, in which each node in the path knows its predecessor and successor, but no other nodes in the circuit.  Traffic flowing down the circuit is sent in fixed-size cells, which are unwrapped by a symmetric key at each node (like the layers of an onion) and relayed downstream.
 
-
-%------------------------------------------------
-
-\section{Citation}\index{Citation}
-
-This statement requires citation \cite{article_key}; this one is more specific \cite[162]{book_key}.
-
-%------------------------------------------------
-
-\section{Lists}\index{Lists}
-
-Lists are useful to present information in a concise and/or ordered way\footnote{Footnote example...}.
-
-\subsection{Numbered List}\index{Lists!Numbered List}
-
-\begin{enumerate}
-\item The first item
-\item The second item
-\item The third item
-\end{enumerate}
-
-\subsection{Bullet Points}\index{Lists!Bullet Points}
-
-\begin{itemize}
-\item The first item
-\item The second item
-\item The third item
-\end{itemize}
-
-\subsection{Descriptions and Definitions}\index{Lists!Descriptions and Definitions}
+Every Tor relay has multiple public/private keypairs. As referenced in chapter \ref{sec:torspec-0} any keypairs has been generated with on of these methods: 1024-bit RSA, Curve25519, Ed25519.
 
 \begin{description}
-\item[Name] Description
-\item[Word] Definition
-\item[Comment] Elaboration
+	\item [1024-bit RSA] :
+	\begin{itemize}
+		\item A long-term signing-only "Identity key" used to sign documents and certificates, and used to establish relay identity.
+		\item A medium-term TAP "Onion key" used to decrypt onion skins when accepting circuit extend attempts.%TODO reference section 5 here  
+		Old keys MUST be accepted for a while after they are no longer advertised.  Because of this, relays MUST retain old keys for a while after they're rotated. (See "onion key lifetime parameters" in dir-spec.txt.) %TODO reference needed
+		\item A short-term "Connection key" used to negotiate TLS connections. Tor implementations MAY rotate this key as often as they like, and SHOULD rotate this key at least once a day. \ref{Key:connection-key}
+	\end{itemize}
+	\item [Curve25519 key] :
+	\begin{itemize}
+		\item A medium-term ntor "Onion key" used to handle onion key handshakes when accepting incoming circuit extend requests.  As with TAP onion keys, old ntor keys MUST be accepted for at least one week after they are no longer advertised.  Because of this, relays MUST retain old keys for a while after they're rotated. (See "onion key lifetime parameters" in dir-spec.txt.) %TODO reference needed
+	\end{itemize}
+	\item [Ed25519] :
+	\begin{itemize}
+		\item A long-term "master identity" key.  This key never changes; it is used only to sign the "signing" key below. may be kept offline.
+		\item A medium-term "signing" key.  This key is signed by the master identity key, and must be kept online.  A new one should be generated periodically.  It signs nearly everything else.
+		\item A short-term "link authentication" key, used to authenticate the link handshake: see section 4 below.  This key is signed by the "signing" key, and should be regenerated frequently.%TODO reference needed
+	\end{itemize}
 \end{description}
+
+The RSA identity key and Ed25519 master identity key together identify a router uniquely.  Once a router has used an Ed25519 master identity key together with a given RSA identity key, neither of those keys may ever be used with a different key.
+
