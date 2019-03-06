@@ -10,8 +10,8 @@ open and usable for circuits.
 \paragraph{}
 When the \textbf{renegotiation} handshake is used,
 \begin{itemize}
-    \item Both parties immediately send a VERSIONS cell.
-    \item A link protocol version is negotiated (which will be 2).
+    \item Both parties immediately send a VERSIONS cell
+    \item A link protocol version is negotiated (which will be 2)
     \item Each send a NETINFO cell to confirm their addresses and timestamps.
 \end{itemize}
 No other intervening cell types are allowed.
@@ -24,11 +24,12 @@ When the \textbf{in-protocol} handshake is used,
     \begin{itemize}
         \item a VERSIONS cell, a CERTS cell to give the
         initiator the certificates it needs to learn the responder's
-        identity.
+        identity,
         \item an AUTH\_CHALLENGE cell that the initiator must include
-        as part of its answer if it chooses to authenticate.
-        \item a NETINFO cell
+        as part of its answer if it chooses to authenticate,
+        \item and, a NETINFO cell.
     \end{itemize}
+
     \item As soon as it gets the CERTS cell, the initiator knows
     whether the responder is correctly authenticated. At this point the
     initiator behaves differently depending on whether it wants to
@@ -106,7 +107,7 @@ list at least version 3.
 \paragraph{}
 Link protocols differences are:
 \begin{enumerate}
-    \item The "certs up front" handshake.
+    \item The "certs up-front" handshake.
     \item Uses the renegotiation-based handshake. Introduces
           variable-length cells.
     \item Uses the in-protocol handshake.
