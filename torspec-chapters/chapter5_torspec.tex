@@ -94,17 +94,19 @@ DESTROY cell to tear down the circuit.
 
 When CREATED/CREATED2 cells are parsed and checked, they are handed off to a
 CPUWorker as a task. If the queue is full, tasks will be added to the pending
-queue. Otherwise, a cpuworker_request_t will be build with the received handshake
-data. A cpuworker_job_t will then be created containing the cpuworker request.
+queue. Otherwise, a cpuworker\_request\_t will be build with the received handshake
+data. A cpuworker\_job\_t will then be created containing the cpuworker request.
 
+\paragraph{}
 The job will further be encapsulated in a workqueue\_entry\_t instance and will be
-added to queue of entries. Whenever a thread becomes idle, it will deque this entry
+added to queue of entries. Whenever a thread becomes idle, it will dequeue this entry
 and call on the request the cpuworker\_onion\_handshake\_threadfn function, which will
 generate the handshake answer based on the on its type, and will save it in the
 cpuworker\_reply\_t field of the job. The reply will be added to reply\_queue.
 Reply's type will be CREATED/CREATED2/CREATED\_FAST.
 
-the cpuworker_onion_handshake_replyfn function will later be called upon the reply, which
+\paragraph{}
+the cpuworker\_onion\_handshake\_replyfn function will later be called upon the reply, which
 will append the CREATED cell to the circuit queue, to be sent on the network to the
 initiating node.
 
