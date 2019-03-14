@@ -1,0 +1,282 @@
+\section{Application connections and stream management}
+
+\subsection{Relay cells}
+
+Within a circuit, the OP and the end node use the contents of
+RELAY packets to tunnel end-to-end commands and TCP connections
+("Streams") across circuits. End-to-end commands can be initiated
+by either edge; streams are initiated by the OP.
+
+\paragraph{}
+End nodes that accept streams may be:
+\begin{itemize}
+    \item exit relays (RELAY_BEGIN, anonymous),
+    \item directory servers (RELAY_BEGIN_DIR, anonymous or non-anonymous),
+    \item onion services (RELAY_BEGIN, anonymous via a rendezvous point).
+\end{itemize}
+
+\paragraph{}
+The payload of each unencrypted RELAY cell consists of:
+
+\begin{verbatim}
+    Relay command [1 byte]
+    'Recognized' [2 bytes]
+    StreamID [2 bytes]
+    Digest [4 bytes]
+    Length [2 bytes]
+    Data [PAYLOAD_LEN-11 bytes]
+\end{verbatim}
+
+\paragraph{}
+The relay commands are:
+
+\begin{verbatim}
+    1 -- RELAY_BEGIN [forward]
+    2 -- RELAY_DATA [forward or backward]
+    3 -- RELAY_END [forward or backward]
+    4 -- RELAY_CONNECTED [backward]
+    5 -- RELAY_SENDME [forward or backward] [sometimes control]
+    6 -- RELAY_EXTEND [forward] [control]
+    7 -- RELAY_EXTENDED [backward] [control]
+    8 -- RELAY_TRUNCATE [forward] [control]
+    9 -- RELAY_TRUNCATED [backward] [control]
+    10 -- RELAY_DROP [forward or backward] [control]
+    11 -- RELAY_RESOLVE [forward]
+    12 -- RELAY_RESOLVED [backward]
+    13 -- RELAY_BEGIN_DIR [forward]
+    14 -- RELAY_EXTEND2 [forward] [control]
+    15 -- RELAY_EXTENDED2 [backward] [control]
+    32..40 -- Used for hidden services; see rend-spec-{v2,v3}.txt.
+\end{verbatim}
+
+\paragraph{}
+Commands labelled as "forward" must only be sent by the originator
+of the circuit. Commands labelled as "backward" must only be sent by
+other nodes in the circuit back to the originator. Commands marked
+as either can be sent either by the originator or other nodes.
+The 'recognized' field is used as a simple indication that the cell
+is still encrypted. It is an optimization to avoid calculating
+expensive digests for every cell. When sending cells, the unencrypted
+'recognized' MUST be set to zero.
+
+\paragraph{}
+When receiving and decrypting cells the 'recognized' will always be
+zero if we're the endpoint that the cell is destined for. For cells
+that we should relay, the 'recognized' field will usually be nonzero,
+but will accidentally be zero with $P=2^{-16}$.
+
+\paragraph{}
+When handling a relay cell, if the 'recognized' in field in a
+decrypted relay payload is zero, the 'digest' field is computed as
+the first four bytes of the running digest of all the bytes that have
+been destined for this hop of the circuit or originated from this hop
+of the circuit, seeded from Df or Db respectively, and including this
+RELAY cell's entire payload (taken with the digest field set to zero).
+If the digest is correct, the cell is considered "recognized" for the
+purposes of decryption.
+
+\paragraph{}
+(The digest does not include any bytes from relay cells that do
+not start or end at this hop of the circuit. That is, it does not
+include forwarded data. Therefore if 'recognized' is zero but the
+digest does not match, the running digest at that node should
+not be updated, and the cell should be forwarded on.)
+
+\paragraph{}
+All RELAY cells pertaining to the same tunneled stream have the same
+stream ID. StreamIDs are chosen arbitrarily by the OP. No stream
+may have a StreamID of zero. Rather, RELAY cells that affect the
+entire circuit rather than a particular stream use a StreamID of zero
+-- they are marked in the table above as "[control]" style
+cells. (Sendme cells are marked as "sometimes control" because they
+can include a StreamID or not depending on their purpose.)
+
+\paragraph{}
+The 'Length' field of a relay cell contains the number of bytes in
+the relay payload which contain real payload data. The remainder of
+the unencrypted payload is padded with padding bytes. Implementations
+handle padding bytes of unencrypted relay cells as they do padding
+bytes for other cell types;
+
+\paragraph{}
+If the RELAY cell is recognized but the relay command is not
+understood, the cell must be dropped and ignored. Its contents
+still count with respect to the digests and flow control windows, though.
+
+\subsection{Opening streams and transferring data}
+To open a new anonymized TCP connection, the OP chooses an open
+circuit to an exit that may be able to connect to the destination
+address, selects an arbitrary StreamID not yet used on that circuit,
+and constructs a RELAY_BEGIN cell with a payload encoding the address
+and port of the destination host. The payload format is:
+\begin{verbatim}
+    ADDRPORT [nul-terminated string]
+    FLAGS [4 bytes]
+    ADDRPORT is made of ADDRESS | ':' | PORT | [00]
+\end{verbatim}
+
+\paragraph{}
+where ADDRESS can be a DNS hostname, or an IPv4 address in
+dotted-quad format, or an IPv6 address surrounded by square brackets;
+and where PORT is a decimal integer between 1 and 65535, inclusive.
+The FLAGS value has one or more of the following bits set, where
+"bit 01" is the LSB of the 32-bit value, and "bit 32" is the MSB.
+(Remember that all values in Tor are big-endian, so
+the MSB of a 4-byte value is the MSB of the first byte, and the LSB
+of a 4-byte value is the LSB of its last byte.)
+bit meaning
+1 -- IPv6 okay. We support learning about IPv6 addresses and
+connecting to IPv6 addresses.
+2 -- IPv4 not okay. We don't want to learn about IPv4 addresses
+or connect to them.
+3 -- IPv6 preferred. If there are both IPv4 and IPv6 addresses,
+we want to connect to the IPv6 one. (By default, we connect
+to the IPv4 address.)
+4..32 -- Reserved. Current clients MUST NOT set these. Servers
+MUST ignore them.
+Upon receiving this cell, the exit node resolves the address as
+necessary, and opens a new TCP connection to the target port. If the
+address cannot be resolved, or a connection can't be established, the
+exit node replies with a RELAY_END cell. (See 6.4 below.)
+Otherwise, the exit node replies with a RELAY_CONNECTED cell, whose
+payload is in one of the following formats:
+The IPv4 address to which the connection was made [4 octets]
+A number of seconds (TTL) for which the address may be cached [4 octets]
+or
+Four zero-valued octets [4 octets]
+An address type (6) [1 octet]
+The IPv6 address to which the connection was made [16 octets]
+A number of seconds (TTL) for which the address may be cached [4 octets]
+[Tor exit nodes before 0.1.2.0 set the TTL field to a fixed value. Later
+versions set the TTL to the last value seen from a DNS server, and expire
+their own cached entries after a fixed interval. This prevents certain
+attacks.]
+Once a connection has been established, the OP and exit node
+package stream data in RELAY_DATA cells, and upon receiving such
+cells, echo their contents to the corresponding TCP stream.
+If the exit node does not support optimistic data (i.e. its
+version number is before 0.2.3.1-alpha), then the OP MUST wait
+for a RELAY_CONNECTED cell before sending any data. If the exit
+node supports optimistic data (i.e. its version number is
+0.2.3.1-alpha or later), then the OP MAY send RELAY_DATA cells
+immediately after sending the RELAY_BEGIN cell (and before
+receiving either a RELAY_CONNECTED or RELAY_END cell).
+RELAY_DATA cells sent to unrecognized streams are dropped. If
+the exit node supports optimistic data, then RELAY_DATA cells it
+receives on streams which have seen RELAY_BEGIN but have not yet
+been replied to with a RELAY_CONNECTED or RELAY_END are queued.
+If the stream creation succeeds with a RELAY_CONNECTED, the queue
+is processed immediately afterwards; if the stream creation fails
+with a RELAY_END, the contents of the queue are deleted.
+Relay RELAY_DROP cells are long-range dummies; upon receiving such
+a cell, the OR or OP must drop it.
+6.2.1. Opening a directory stream
+If a Tor relay is a directory server, it should respond to a
+RELAY_BEGIN_DIR cell as if it had received a BEGIN cell requesting a
+connection to its directory port. RELAY_BEGIN_DIR cells ignore exit
+policy, since the stream is local to the Tor process.
+Directory servers may be:
+* authoritative directories (RELAY_BEGIN_DIR, usually non-anonymous),
+* bridge authoritative directories (RELAY_BEGIN_DIR, anonymous),
+* directory mirrors (RELAY_BEGIN_DIR, usually non-anonymous),
+* onion service directories (RELAY_BEGIN_DIR, anonymous).
+If the Tor relay is not running a directory service, it should respond
+with a REASON_NOTDIRECTORY RELAY_END cell.
+Clients MUST generate an all-zero payload for RELAY_BEGIN_DIR cells,
+and relays MUST ignore the payload.
+In response to a RELAY_BEGIN_DIR cell, relays respond either with a
+RELAY_CONNECTED cell on succcess, or a RELAY_END cell on failure. They
+MUST send a RELAY_CONNECTED cell all-zero payload, and clients MUST ignore
+the payload.
+[RELAY_BEGIN_DIR was not supported before Tor 0.1.2.2-alpha; clients
+SHOULD NOT send it to routers running earlier versions of Tor.]
+6.3. Closing streams
+When an anonymized TCP connection is closed, or an edge node
+encounters error on any stream, it sends a 'RELAY_END' cell along the
+circuit (if possible) and closes the TCP connection immediately. If
+an edge node receives a 'RELAY_END' cell for any stream, it closes
+the TCP connection completely, and sends nothing more along the
+circuit for that stream.
+The payload of a RELAY_END cell begins with a single 'reason' byte to
+describe why the stream is closing. For some reasons, it contains
+additional data (depending on the reason.) The values are:
+1 -- REASON_MISC (catch-all for unlisted reasons)
+2 -- REASON_RESOLVEFAILED (couldn't look up hostname)
+3 -- REASON_CONNECTREFUSED (remote host refused connection) [*]
+4 -- REASON_EXITPOLICY (OR refuses to connect to host or port)
+5 -- REASON_DESTROY (Circuit is being destroyed)
+6 -- REASON_DONE (Anonymized TCP connection was closed)
+7 -- REASON_TIMEOUT (Connection timed out, or OR timed out
+while connecting)
+8 -- REASON_NOROUTE (Routing error while attempting to
+contact destination)
+9 -- REASON_HIBERNATING (OR is temporarily hibernating)
+10 -- REASON_INTERNAL (Internal error at the OR)
+11 -- REASON_RESOURCELIMIT (OR has no resources to fulfill request)
+12 -- REASON_CONNRESET (Connection was unexpectedly reset)
+13 -- REASON_TORPROTOCOL (Sent when closing connection because of
+Tor protocol violations.)
+14 -- REASON_NOTDIRECTORY (Client sent RELAY_BEGIN_DIR to a
+non-directory relay.)
+(With REASON_EXITPOLICY, the 4-byte IPv4 address or 16-byte IPv6 address
+forms the optional data, along with a 4-byte TTL; no other reason
+currently has extra data.)
+OPs and ORs MUST accept reasons not on the above list, since future
+versions of Tor may provide more fine-grained reasons.
+Tors SHOULD NOT send any reason except REASON_MISC for a stream that they
+have originated.
+[*] Older versions of Tor also send this reason when connections are
+reset.
+--- [The rest of this section describes unimplemented functionality.]
+Because TCP connections can be half-open, we follow an equivalent
+to TCP's FIN/FIN-ACK/ACK protocol to close streams.
+An exit (or onion service) connection can have a TCP stream in one of
+three states: 'OPEN', 'DONE_PACKAGING', and 'DONE_DELIVERING'. For the
+purposes of modeling transitions, we treat 'CLOSED' as a fourth state,
+although connections in this state are not, in fact, tracked by the
+onion router.
+A stream begins in the 'OPEN' state. Upon receiving a 'FIN' from
+the corresponding TCP connection, the edge node sends a 'RELAY_FIN'
+cell along the circuit and changes its state to 'DONE_PACKAGING'.
+Upon receiving a 'RELAY_FIN' cell, an edge node sends a 'FIN' to
+the corresponding TCP connection (e.g., by calling
+shutdown(SHUT_WR)) and changing its state to 'DONE_DELIVERING'.
+When a stream in already in 'DONE_DELIVERING' receives a 'FIN', it
+also sends a 'RELAY_FIN' along the circuit, and changes its state
+to 'CLOSED'. When a stream already in 'DONE_PACKAGING' receives a
+'RELAY_FIN' cell, it sends a 'FIN' and changes its state to
+'CLOSED'.
+If an edge node encounters an error on any stream, it sends a
+'RELAY_END' cell (if possible) and closes the stream immediately.
+6.4. Remote hostname lookup
+To find the address associated with a hostname, the OP sends a
+RELAY_RESOLVE cell containing the hostname to be resolved with a NUL
+terminating byte. (For a reverse lookup, the OP sends a RELAY_RESOLVE
+cell containing an in-addr.arpa address.) The OR replies with a
+RELAY_RESOLVED cell containing any number of answers. Each answer is
+of the form:
+Type (1 octet)
+Length (1 octet)
+Value (variable-width)
+TTL (4 octets)
+"Length" is the length of the Value field.
+"Type" is one of:
+0x00 -- Hostname
+0x04 -- IPv4 address
+0x06 -- IPv6 address
+0xF0 -- Error, transient
+0xF1 -- Error, nontransient
+If any answer has a type of 'Error', then no other answer may be
+given.
+The 'Value' field encodes the answer:
+IP addresses are given in network order.
+Hostnames are given in standard DNS order ("www.example.com")
+and not NUL-terminated.
+The content of Errors is currently ignored. Relays currently
+set it to the string "Error resolving hostname" with no
+terminating NUL. Implementations MUST ignore this value.
+For backward compatibility, if there are any IPv4 answers, one of those
+must be given as the first answer.
+The RELAY_RESOLVE cell must use a nonzero, distinct streamID; the
+corresponding RELAY_RESOLVED cell must use the same streamID. No stream
+is actually created by the OR when resolving the name.

@@ -190,7 +190,7 @@ based on which of these cases has happened:
             \item The CERTS cell contains exactly one CertType 2 "ID" certificate.
             \item The CERTS cell contains exactly one CertType 4 Ed25519
             "Id->Signing" cert.
-            \item The CERTS cell contains exactly one CertType 5 Ed25519
+            \item The CERTS cell contains exactly one CertType 5 Ed25519 \ref{key:link_auth}
             "Signing->link" certificate.
             \item The CERTS cell contains exactly one CertType 7 "RSA->Ed25519"
             cross-certificate.
@@ -314,7 +314,7 @@ certificates, the initiator sends a CertType 3 (and possibly
 CertType 6) cert for an RSA/Ed25519 AUTHENTICATE key.
 This difference is because we allow any link key type on a TLS
 link, but the protocol described here will only work for specific key
-types as described in 4.4.1 and 4.4.2 below.
+types as described below.
 
 \paragraph{}
 An AUTHENTICATE cell contains the following:
