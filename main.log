@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  2 APR 2019 00:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  2 APR 2019 00:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1894,7 +1894,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <30> not available
 
 ] [8]
 Chapter 1.
-<Pictures/chapter_head_2.pdf, id=304, 3581.38pt x 1790.69pt>
+<Pictures/chapter_head_2.pdf, id=328, 3581.38pt x 1790.69pt>
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 
 <use Pictures/chapter_head_2.pdf>
@@ -1982,7 +1982,7 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 14.
 
-<Pictures/placeholder.jpg, id=386, 351.3125pt x 193.72375pt>
+<Pictures/placeholder.jpg, id=410, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
@@ -2002,242 +2002,124 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-[20] (./torspec-chapters/chapter1_torspec.tex
+[20] (./torspec-chapters/chapter0_torspec.tex
 Chapter 4.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
-
-
-LaTeX Warning: Citation 'article_key' on page 21 undefined on input line 19.
-
-
-LaTeX Warning: Citation 'book_key' on page 21 undefined on input line 19.
-
+) (./torspec-chapters/chapter1_torspec.tex
 [21
 
-]) (./torspec-chapters/chapter2_torspec.tex [22]
+] [22
+
+]
 Chapter 5.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
-Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
-Package mdframed Info: mdframed works in twoside mode on input line 10.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 10.
-Package mdframed Info: mdframed works in twoside mode on input line 21.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 21.
-Package mdframed Info: mdframed works in twoside mode on input line 31.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 31.
- [23
 
-]
-Package mdframed Info: mdframed works in twoside mode on input line 69.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 69.
- [24]
-Package mdframed Info: mdframed works in twoside mode on input line 124.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 124.
-)
-(./torspec-chapters/chapter3_torspec.tex [25] [26
+Underfull \vbox (badness 4205) has occurred while \output is active []
 
-]
+ [23])
+(./torspec-chapters/chapter2_torspec.tex [24]
 Chapter 6.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
- []
-
-
-Overfull \hbox (81.08235pt too wide) in paragraph at lines 13--29
- [] 
- []
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 4.
 
 
-Overfull \hbox (76.07825pt too wide) in paragraph at lines 39--62
- [] 
- []
+
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 6.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--66
 
- []
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 8.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--66
 
- []
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 13
+.
+
+<Pictures/TLS-Handshake.png, id=499, 677.53125pt x 417.56pt>
+File: Pictures/TLS-Handshake.png Graphic file (type png)
+
+<use Pictures/TLS-Handshake.png>
+Package pdftex.def Info: Pictures/TLS-Handshake.png used on input line 16.
+(pdftex.def)             Requested size: 406.52188pt x 250.53792pt.
+
+
+LaTeX Warning: Citation 'TLS-meduim' on page 25 undefined on input line 17.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--119
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 22
+.
 
+
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 24
+.
+
+<Pictures/TLSv1-12_algs.png, id=501, 730.73pt x 217.81375pt>
+File: Pictures/TLSv1-12_algs.png Graphic file (type png)
+
+<use Pictures/TLSv1-12_algs.png>
+Package pdftex.def Info: Pictures/TLSv1-12_algs.png used on input line 28.
+(pdftex.def)             Requested size: 438.44138pt x 130.68924pt.
+
+Overfull \hbox (11.65002pt too wide) in paragraph at lines 28--29
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--119
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 29
+.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--119
-
- []
-
-[27]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--151
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+
+ []
+
+[25
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
+
+ []
+
+[26 <./Pictures/TLS-Handshake.png> <./Pictures/TLSv1-12_algs.png>]
+
+LaTeX Warning: Citation 'crl_rfc' on page 27 undefined on input line 64.
+
+
+Overfull \hbox (19.97226pt too wide) in paragraph at lines 81--82
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (19.97226pt too wide) in paragraph at lines 83--84
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--151
+LaTeX Warning: Citation 'crl_rfc' on page 27 undefined on input line 94.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--151
-
- []
-
-[28])
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--19
-
- []
-
-[29]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30]
-(./torspec-chapters/chapter4_torspec.tex [31] [32
+[27] [28]) (./torspec-chapters/chapter3_torspec.tex [29] [30
 
 ]
 Chapter 7.
@@ -2245,21 +2127,228 @@ File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
-)) [33]
-\openout2 = `cryptography_guide.aux'.
 
- (./cryptography_guide.tex [34
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
 
 
+Overfull \hbox (81.08235pt too wide) in paragraph at lines 14--30
+ [] 
+ []
+
+
+Overfull \hbox (76.07825pt too wide) in paragraph at lines 40--63
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--67
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--120
+
+ []
+
+[31]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--152
+
+ []
+
+[32])
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--29
+
+ []
+
+[33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+(./torspec-chapters/chapter4_torspec.tex [35] [36
 
 ]
-(./main.ptc) [35] [36]
+Chapter 8.
+File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
+<use Pictures/chapter_head_2.pdf>
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
+ [37] [38] [39] [40] [41] [42] [43])
+(./torspec-chapters/chapter5_torspec.tex [44]
+Chapter 9.
+File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
+<use Pictures/chapter_head_2.pdf>
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
+ [45
+
+]
+Overfull \hbox (58.7632pt too wide) in paragraph at lines 57--61
+\T1/ptm/m/n/10.95 (-20) The first for-mat is equiv-a-lent to a CRE-ATE2 cell wi
+th HTYPE of 'tap' and length of TAP_C_HANDSHAKE_LEN.
+ []
+
+[46] [47] [48] [49] [50] [51] [52]
+Underfull \vbox (badness 2150) has occurred while \output is active []
+
+ [53]
+[54] [55] [56])) [57]
+\openout2 = `cryptography_guide.aux'.
+
+ (./cryptography_guide.tex [58
+
+
+
+] (./main.ptc) [59] [60]
 (./cryptography-guide-chapters/chapter1_cryptography_guide.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
  []
 
-<Pictures/AES_cntr.png, id=566, 1206.5075pt x 485.815pt>
+<Pictures/AES_cntr.png, id=885, 1206.5075pt x 485.815pt>
 File: Pictures/AES_cntr.png Graphic file (type png)
 
 <use Pictures/AES_cntr.png>
@@ -2270,14 +2359,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--45
 
  []
 
-<Pictures/AES_cntr_kh.png, id=569, 490.83376pt x 219.82124pt>
+<Pictures/AES_cntr_kh.png, id=887, 490.83376pt x 219.82124pt>
 File: Pictures/AES_cntr_kh.png Graphic file (type png)
 
 <use Pictures/AES_cntr_kh.png>
 Package pdftex.def Info: Pictures/AES_cntr_kh.png used on input line 47.
 (pdftex.def)             Requested size: 392.66753pt x 175.85722pt.
- [37 <./Pictures/AES_cntr.png>])
-(./cryptography-guide-chapters/chapter2_cryptography_guide.tex [38 <./Pictures/
+ [61 <./Pictures/AES_cntr.png>])
+(./cryptography-guide-chapters/chapter2_cryptography_guide.tex [62 <./Pictures/
 AES_cntr_kh.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 8--31
 
@@ -2294,7 +2383,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--35
  []
 
 
-LaTeX Warning: Citation 'pkcs' on page 39 undefined on input line 41.
+LaTeX Warning: Citation 'pkcs' on page 63 undefined on input line 41.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
@@ -2315,7 +2404,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
-[39]
+[63]
 Overfull \hbox (0.90472pt too wide) in paragraph at lines 76--96
 [][] 
  []
@@ -2325,7 +2414,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--101
 
  []
 
-[40]
+[64]
 Underfull \hbox (badness 10000) in paragraph at lines 113--116
 
  []
@@ -2341,7 +2430,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--131
  []
 
 
-LaTeX Warning: Citation 'pkcs' on page 41 undefined on input line 131.
+LaTeX Warning: Citation 'pkcs' on page 65 undefined on input line 131.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--134
@@ -2356,8 +2445,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--137
 
 Underfull \vbox (badness 2512) has occurred while \output is active []
 
- [41]
-<Pictures/EME-OAEP.png, id=662, 599.23875pt x 508.90125pt>
+ [65]
+<Pictures/EME-OAEP.png, id=980, 599.23875pt x 508.90125pt>
 File: Pictures/EME-OAEP.png Graphic file (type png)
 
 <use Pictures/EME-OAEP.png>
@@ -2388,7 +2477,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 ) (./cryptography-guide-chapters/chapter3_cryptography_guide.tex
-<Pictures/SHA-1-wiki.png, id=663, 1284.8pt x 1337.99875pt>
+<Pictures/SHA-1-wiki.png, id=981, 1284.8pt x 1337.99875pt>
 File: Pictures/SHA-1-wiki.png Graphic file (type png)
 
 <use Pictures/SHA-1-wiki.png>
@@ -2396,42 +2485,50 @@ Package pdftex.def Info: Pictures/SHA-1-wiki.png used on input line 8.
 (pdftex.def)             Requested size: 141.32843pt x 147.18031pt.
 
 
-LaTeX Warning: Citation 'sha-1-wiki' on page 42 undefined on input line 13.
+LaTeX Warning: Citation 'sha-1-wiki' on page 66 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'sha-1-slideshare' on page 66 undefined on input line 1
+5.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--18
 
  []
 
-[42 <./Pictures/EME-OAEP.png> <./Pictures/SHA-1-wiki.png>]
-<Pictures/SHA-1.png, id=675, 814.04124pt x 349.305pt>
+[66 <./Pictures/EME-OAEP.png> <./Pictures/SHA-1-wiki.png>]
+<Pictures/SHA-1.png, id=993, 814.04124pt x 349.305pt>
 File: Pictures/SHA-1.png Graphic file (type png)
  <use Pictures/SHA-1.png>
 Package pdftex.def Info: Pictures/SHA-1.png used on input line 23.
 (pdftex.def)             Requested size: 244.21425pt x 104.7923pt.
 
-<Pictures/SHA1-init.png, id=676, 661.47125pt x 241.90375pt>
+<Pictures/SHA1-init.png, id=994, 661.47125pt x 241.90375pt>
 File: Pictures/SHA1-init.png Graphic file (type png)
 
 <use Pictures/SHA1-init.png>
 Package pdftex.def Info: Pictures/SHA1-init.png used on input line 29.
 (pdftex.def)             Requested size: 198.4429pt x 72.57167pt.
 
-<Pictures/SHA-1-k.png, id=677, 290.08376pt x 161.60374pt>
+<Pictures/SHA-1-k.png, id=995, 290.08376pt x 161.60374pt>
 File: Pictures/SHA-1-k.png Graphic file (type png)
 
 <use Pictures/SHA-1-k.png>
 Package pdftex.def Info: Pictures/SHA-1-k.png used on input line 43.
 (pdftex.def)             Requested size: 145.04152pt x 80.80167pt.
 
-<Pictures/SHA-1-P.png, id=679, 684.5575pt x 297.11pt>
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
+
+ []
+
+[67 <./Pictures/SHA-1.png> <./Pictures/SHA1-init.png> <./Pictures/SHA-1-k.png>]
+<Pictures/SHA-1-P.png, id=1017, 684.5575pt x 297.11pt>
 File: Pictures/SHA-1-P.png Graphic file (type png)
 
 <use Pictures/SHA-1-P.png>
-Package pdftex.def Info: Pictures/SHA-1-P.png used on input line 55.
+Package pdftex.def Info: Pictures/SHA-1-P.png used on input line 57.
 (pdftex.def)             Requested size: 342.27791pt x 148.55463pt.
- [43 <./Pictures/SHA-1.png> <./Pictures/SHA1-init.png> <./Pictures/SHA-1-k.png>
-])) [44 <./Pictures/SHA-1-P.png>]
+)) [68 <./Pictures/SHA-1-P.png>]
 \openout2 = `bibliography.aux'.
 
  (./bibliography.tex
@@ -2453,14 +2550,14 @@ Package biblatex Warning: Type 'misc' not found on input line 20.
 
 LaTeX Warning: Empty bibliography on input line 20.
 
-) [45
+) [69
 
 
 
 ]
 \openout2 = `index.aux'.
 
- (./index.tex [46
+ (./index.tex [70
 
 
 
@@ -2494,15 +2591,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36604 strings out of 493029
- 664233 string characters out of 6136233
- 1196486 words of memory out of 5000000
- 38988 multiletter control sequences out of 15000+600000
- 137091 words of font info for 308 fonts, out of 8000000 for 9000
+ 36946 strings out of 493029
+ 668571 string characters out of 6136233
+ 1202927 words of memory out of 5000000
+ 39101 multiletter control sequences out of 15000+600000
+ 137481 words of font info for 314 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,59p,10511b,3282s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.11} has been referenced but does not exi
-st, replaced by a fixed one
+pdfTeX warning (dest): name{section*.133} has been referenced but does not ex
+ist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
 texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/typ
@@ -2520,10 +2617,10 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on main.pdf (46 pages, 1261456 bytes).
+Output written on main.pdf (70 pages, 1441690 bytes).
 PDF statistics:
- 977 PDF objects out of 1000 (max. 8388607)
- 765 compressed objects within 8 object streams
- 262 named destinations out of 1000 (max. 500000)
- 68049 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1340 PDF objects out of 1440 (max. 8388607)
+ 1088 compressed objects within 11 object streams
+ 474 named destinations out of 1000 (max. 500000)
+ 68067 words of extra memory for PDF output out of 74296 (max. 10000000)
 
