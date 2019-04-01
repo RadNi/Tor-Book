@@ -12,7 +12,7 @@ A, B, C, D and E are 32-bit words of the state; F is a nonlinear function that v
 \end{figure}
 \footnote{You can find more details of the figure here \cite{sha-1-wiki}.}
 
-\textit{Steps}:
+\textit{Steps}\cite{sha-1-slideshare}:
 \\
 \begin{enumerate}
 	\itemsep1em
@@ -46,11 +46,13 @@ A, B, C, D and E are 32-bit words of the state; F is a nonlinear function that v
 				\end{figure}
 				\item SHA has a total of 80 iterations (4 round X 20 iterations). Each iterations consist of the following operations:\\
 				$abcde = (e + Process e + S^5(a) + W[t] + K[t])\ ||\ a\ ||\ S^{30}(b)\ ||\ c\ ||\ d$\\
-					abcde is the register made up of 5 variables a, b, c, d, e.\\
-					Process P is a logical operation.\ref{fig:SHA-1-P} \\
-					$S^t$ is a circular-shift of 32-bit sub-block by t bits.\\
-					W[t] is a 32-bit derived from the current 32-bit sub-block.\\
-					K[t] is one of the 5 additive constants.
+					\begin{description}
+						\item[abcde] The register made up of 5 variables a, b, c, d, e.
+						\item[Process P:] A logical operation.\ref{fig:SHA-1-P} 
+						\item[$S^t$] is a circular-shift of 32-bit sub-block by t bits.
+						\item[W[t]] is a 32-bit derived from the current 32-bit sub-block.
+						\item[K[t]] is one of the 5 additive constants.
+					\end{description}
 				\begin{figure}[!h]
 					\centering\includegraphics[scale=0.5]{SHA-1-P}
 					\caption{Steps 4}
@@ -66,7 +68,6 @@ The values of W[t] are calculated as follows:
 	\item For the remaining 64 values of W are derived using the equation:\\
 	$W[t] = S^1(W[t-16] \oplus W[t-14] \oplus W[t-8] \oplus W[t-3]) $
 \end{itemize}
-
 
 
 
