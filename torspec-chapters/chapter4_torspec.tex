@@ -134,9 +134,9 @@ Any extra octets at the end of a CERTS cell MUST be ignored.
 Relevant certType values are:
 \begin{enumerate}
     \item Link key certificate certified by RSA1024 identity
-    \item RSA1024 Identity certificate, self-signed.
+    \item RSA1024 Identity certificate, self-signed.\ref{key:link_auth_rsa}
     \item RSA1024 AUTHENTICATE cell link certificate, signed with RSA1024 key.
-    \item Ed25519 signing key, signed with identity key.
+    \item Ed25519 signing key, signed with identity key.\ref{key:link_auth_ed25519}
     \item TLS link certificate, signed with ed25519 signing key.
     \item Ed25519 AUTHENTICATE cell key, signed with ed25519 signing key.
     \item Ed25519 identity, signed with RSA identity.
@@ -190,7 +190,7 @@ based on which of these cases has happened:
             \item The CERTS cell contains exactly one CertType 2 "ID" certificate.
             \item The CERTS cell contains exactly one CertType 4 Ed25519
             "Id->Signing" cert.
-            \item The CERTS cell contains exactly one CertType 5 Ed25519 \ref{key:link_auth}
+            \item The CERTS cell contains exactly one CertType 5 Ed25519
             "Signing->link" certificate.
             \item The CERTS cell contains exactly one CertType 7 "RSA->Ed25519"
             cross-certificate.
