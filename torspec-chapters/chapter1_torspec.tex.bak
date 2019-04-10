@@ -1,0 +1,49 @@
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
+
+\chapter{Preliminaries}
+
+\section{Ciphers}
+%\index{Paragraphs of Text}
+\subsection{Stream Cipher}
+For stream ciphers Tor uses 128-bit AES in counter mode, with an IV of all 0 bytes.
+\\
+In section \ref{sec:AES} we provide some notes about AES counter mode. Tor usage for AES counter mode with EVP APIs is located \href{https://gitweb.torproject.org/tor.git/tree/src/lib/crypt_ops/aes_openssl.c}{here} .
+\\
+For a public-key cipher, uses RSA with 1024-bit keys and a fixed exponent of 65537 and OAEP-MGF1 padding format, with SHA-1 as its digest function. Further information about RSA explained in section \ref{sec:RSA}.
+
+
+%------------------------------------------------
+
+\section{Citation}\index{Citation}
+
+This statement requires citation \cite{article_key}; this one is more specific \cite[162]{book_key}.
+
+%------------------------------------------------
+
+\section{Lists}\index{Lists}
+
+Lists are useful to present information in a concise and/or ordered way\footnote{Footnote example...}.
+
+\subsection{Numbered List}\index{Lists!Numbered List}
+
+\begin{enumerate}
+\item The first item
+\item The second item
+\item The third item
+\end{enumerate}
+
+\subsection{Bullet Points}\index{Lists!Bullet Points}
+
+\begin{itemize}
+\item The first item
+\item The second item
+\item The third item
+\end{itemize}
+
+\subsection{Descriptions and Definitions}\index{Lists!Descriptions and Definitions}
+
+\begin{description}
+\item[Name] Description
+\item[Word] Definition
+\item[Comment] Elaboration
+\end{description}

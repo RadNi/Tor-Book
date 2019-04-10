@@ -1,0 +1,237 @@
+\chapter{Cell Packet Format}
+
+\textbf{Cells}\\
+\\
+Cell is the basic unit for communication in onion routers and onion proxies. Cells have fixed-width size of \textbf{512 bytes}, all of them are consisted by \textit{header} and \textit{payload}.
+\section{Cell versions}
+
+Different versions of tor connection have different cell structure:
+\\
+\begin{table}[h!]
+  \begin{center}
+    \caption{Version 1 cell packet format}
+    \label{tab:CPFV1}
+    \begin{tabular}{c|c|l} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      \textbf{Command} & \textbf{Length} & \textbf{Description}\\
+	\toprule
+      CircID & CIRCID\_LEN bytes & \begin{tabular}{l}
+      Determines which circuit (if any)\\
+      the connection is associated with\\
+      \end{tabular}\\
+      \midrule
+      Command & 1 byte & \begin{tabular}{l}
+      Command field tells what\\
+      to do with the cell\\
+      \end{tabular}\\      
+      \midrule
+      Payload (padded with padding bytes) & PAYLOAD\_LEN bytes & \begin{tabular}{l}interpretation is based on the command field\\ \end{tabular}
+   		
+    \end{tabular}
+  \end{center}
+\end{table}
+\\
+\textbf{Version 2 and higher}
+\\
+All cells have the same format as \textit{Version 1} except the variable length connections.
+\begin{table}[h!]
+  \begin{center}
+    \caption{Version 2 and higher cell format}
+    \label{tab:CPFV2U}
+    \begin{tabular}{c|c|l} 
+      \textbf{Command} & \textbf{Length} & \textbf{Description}\\
+	\toprule
+      CircID & CIRCID\_LEN bytes & \begin{tabular}{l}
+      Determines which circuit (if any)\\
+      the connection is associated with\\
+      \end{tabular}\\
+      \midrule
+      Command & 1 byte & \begin{tabular}{l}
+      Command field tells what\\
+      to do with the cell\\
+      \end{tabular}\\     
+      \midrule
+      Payload (padded with padding bytes) & PAYLOAD\_LEN bytes & \begin{tabular}{l}interpretation on the command field\\ \end{tabular}\\
+     \midrule
+     Length & 2 bytes big-endian integer & \begin{tabular}{l}			Determines the length of cell\\
+     it will be specified for processing\\
+      with a command byte ( explained blow )\\ \end{tabular}\\
+      \midrule
+      Payload (some commands MAY pad) & \textit{Length} bytes & \begin{tabular}{l}interpretation is based on the command\\
+field, some commands MAY be padded\\      
+       \end{tabular}\\
+    \end{tabular}
+  \end{center}
+\end{table}
+\\
+\\
+\subsection{Headers and Commands}\hfill\\
+\textbf{CircID Header}
+\\
+ The header includes a circuit identifier (\textit{circID}) that
+specifies which circuit the cell refers to (many circuits can
+be multiplexed over the single TLS connection), and a command to describe what to do with the cell's payload. (Circuit
+identifiers are connection-specific: each circuit has a different \textit{circID} on each OP/OR or OR/OR connection it traverses.)
+\\
+\\
+Based on their command, cells are either \textbf{control cells}, which
+are always interpreted by the node that receives them, or \textbf{relay cells}, which carry end-to-end stream data.
+\\
+\\
+The 'Command' field of a fixed-length and varibale-length cell holds one of the following
+values:
+\begin{table}[h!]
+\caption{Type of commands}
+    \label{tab:commands}
+    \begin{tabular}{c|c|l} 
+      \textbf{Value} & \textbf{Command (fixed-length)} & \textbf{Description and References}\\
+	\toprule
+0 & PADDING & padding cell (Sec 7.2)\\
+1 & CREATE & Create a circuit (Sec 5.1)\\
+2 & CREATED & Acknowledge create (Sec 5.1)\\
+3 & RELAY & End-to-end data (Sec 5.5 and Sec 6)\\
+4 & DESTROY & destroy a circuit (Sec 5.4)\\
+5 & CREATE\_FAST & Create a circuit, no PK (Sec 5.1)\\ 
+6 & CREATED\_FAST & Circuit created, no PK (Sec 5.1)\\
+8 & NETINFO & Time and address info (Sec 4.5)\\
+9 & RELAY\_EARLY & End-to-end data (Sec 5.6)\\
+10 & CREATE2 & Extended CREATE cell (Sec 5.1)\\
+11 & CREATED2 & Extended CREATED cell (Sec 5.1)\\
+12 & PADDING\_NEGOTIATE & Padding negotiation (Sec 7.2)\\
+\toprule
+\multicolumn{3}{c}{\textbf{Command (variable-length)}}\\
+\toprule
+7 & VERSIONS & Negotiate proto version (Sec 4)\\
+128 & VPADDING & Variable-length padding (Sec 7.2)\\
+129 & CERTS & Certificates (Sec 4.2)\\
+130 & AUTH\_CHALLENGE & Challenge value (Sec 4.3)\\
+131 & AUTHENTICATE & Client authentication (Sec 4.5)\\
+132 & AUTHORIZE & Client authorization (Reserved for future use)\\
+\end{tabular}
+\end{table}
+\\
+\\
+\textbf{Control cells}
+\\
+\\
+The control cell commands are: \textit{padding} (currently used for keepalive,
+but also usable for link padding); \textit{create} or \textit{created} (used to
+set up a new circuit); and \textit{destroy} (to tear down a circuit).
+\newline
+\begin{center}
+\begin{tabular}{cccccccc}
+2 & 1 & \multicolumn{6}{c}{509 bytes}\\
+\hline
+\vline CircId & \vline CMD \vline & \multicolumn{6}{c}{DATA}\vline\\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Relay cells}
+\\
+\\
+Relay cells have an additional header (the relay header) at
+the front of the payload, containing a \textit{streamID} (stream identifier: many streams can be multiplexed over a circuit); an
+end-to-end \textit{checksum} for integrity checking; the \textit{length} of the
+relay payload; and a relay \textit{command}. The entire contents of
+the relay header and the relay cell payload are encrypted or
+decrypted together as the relay cell moves along the circuit,
+using the \textbf{128-bit AES} cipher in counter mode to generate a
+cipher stream.
+\newline
+\\
+\textbf{Relay commands}
+\\
+\\
+The relay commands are: relay \textit{data} (for data flowing down the stream), relay \textit{begin} (to open a stream), relay \textit{end} (to close a stream cleanly), relay \textit{teardown} (to close a broken stream), relay \textit{connected} (to notify the OP that a relay
+begin has succeeded), relay \textit{extend} and relay \textit{extended} (to extend the circuit by a hop, and to acknowledge), relay \textit{truncate}
+and relay \textit{truncated} (to tear down only part of the circuit, and
+to acknowledge), relay \textit{sendme} (used for congestion control),
+and relay \textit{drop} (used to implement long-range dummies).
+\newline
+\\
+\newline
+\begin{center}
+\begin{tabular}{ccccccccccccc}
+2 & 1 & 2 & 6 & 2 & 1 & \multicolumn{6}{c}{498 bytes}\\
+\hline
+\vline CircId & \vline Relay \vline & StreamID \vline & Digest \vline & Length \vline & CMD \vline & \multicolumn{6}{c}{DATA}\vline\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Further explanations}\hfill\\
+\textbf{Version cells}
+\\
+\\
+Most variable-length cells MAY be padded with padding bytes, except
+for \textit{VERSIONS} cells, which MUST NOT contain any additional bytes.
+(The payload of \textit{VPADDING} cells consists of padding bytes.)
+\textit{version} cell is used in negotiation phase.
+\\
+On a \textbf{version 2} connection, variable-length cells are indicated by a
+command byte equal to 7 ("\textit{VERSIONS}"). On a \textbf{version 3 or
+higher} connection, variable-length cells are indicated by a command
+byte equal to 7 ("\textit{VERSIONS}"), or greater than or equal to 128.
+\\
+\\
+\textbf{CircID}
+\\
+\\
+CIRCID\_LEN is 2 for link protocol versions 1, 2, and 3. CIRCID\_LEN
+is 4 for link protocol version 4 or higher. The first VERSIONS cell,
+and any cells sent before the first VERSIONS cell, always have
+CIRCID\_LEN == 2 for backward compatibility.
+The CircID field determines which circuit, if any, the cell is
+associated with.
+\\
+\\
+\textbf{Interpretation of payload}
+\\
+\\
+The interpretation of 'Payload' depends on the type of the cell.\\\\
+\textit{VPADDING/PADDING}: Payload contains padding bytes.\\
+\textit{CREATE/CREATE2}: Payload contains the handshake challenge.\\
+\textit{CREATED/CREATED2}: Payload contains the handshake response.\\
+\textit{RELAY/RELAY\_EARLY}: Payload contains the relay header and relay body.\\
+\textit{DESTROY}: Payload contains a reason for closing the circuit.
+(see 5.4)\\
+Upon receiving any other value for the command field, an OR must
+drop the cell. Since more cell types may be added in the future, ORs
+should generally not warn when encountering unrecognized commands.
+\\
+\\
+\textbf{Padding and padding bytes}
+\\
+\\
+The cell is padded up to the cell length with padding bytes and receivers MUST ignore padding bytes.\\
+Senders set padding bytes depending on the cell's command:\\\\
+\textit{VERSIONS}: Payload MUST NOT contain padding bytes.\\
+\textit{AUTHORIZE}: Payload is unspecified and reserved for future use.\\
+\\
+Other \textbf{variable-length} cells:\\\\
+Payload MAY contain padding bytes at the end of the cell.
+Padding bytes SHOULD be set to NULL.\\
+\textit{RELAY/RELAY\_EARLY}: Payload MUST be padded to PAYLOAD\_LEN with padding
+bytes. Padding bytes SHOULD be set to random values.\\\\
+Other \textbf{fixed-length} cells:\\\\
+Payload MUST be padded to PAYLOAD\_LEN with padding bytes.
+Padding bytes SHOULD be set to NULL.\\
+We recommend random padding in \textit{RELAY/RELAY\_EARLY} cells, so that the cell
+content is unpredictable. \textbf{See proposal 289 for details} (in short, the traffic can not be easily identified).\\ For other
+cells, TLS authenticates cell content, so randomized padding bytes are
+redundant.\\
+\\
+\\
+\textbf{Other commands explanation}
+\\
+\\
+\textit{PADDING} cells are currently used to implement connection keepalive.
+If there is no other traffic, ORs and OPs send one another a PADDING
+cell every few minutes.\\
+\textit{CREATE, CREATE2, CREATED, CREATED2,} and DESTROY cells are used to
+manage circuits; (see section 5 below)
+\textit{RELAY} cells are used to send commands and data along a circuit; (see
+section 6 below)\\
+\textit{VERSIONS and NETINFO} cells are used to set up connections in link
+protocols v2 and higher; in link protocol v3 and higher, \textit{CERTS,
+AUTH\_CHALLENGE}, and \textit{AUTHENTICATE} may also be used. (See section 4
+below)\\
+\\

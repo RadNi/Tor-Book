@@ -1,0 +1,418 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {I}{Part One}}{7}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Text Chapter}{9}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Paragraphs of Text}{9}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Citation}{10}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Lists}{10}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}Numbered List}{10}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}Bullet Points}{10}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}Descriptions and Definitions}{10}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}In-text Elements}{11}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Theorems}{11}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Several equations}{11}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Single Line}{11}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Definitions}{11}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Notations}{12}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Remarks}{12}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Corollaries}{12}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Propositions}{12}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.1}Several equations}{12}{subsection.2.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.2}Single Line}{12}{subsection.2.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Examples}{12}{section.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.1}Equation and Text}{12}{subsection.2.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.2}Paragraph of Text}{13}{subsection.2.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.8}Exercises}{13}{section.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.9}Problems}{13}{section.2.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.10}Vocabulary}{13}{section.2.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {II}{Part Two}}{15}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Presenting Information}{17}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Table}{17}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Figure}{17}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {III}{Tor Specification}}{19}{part.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Preliminaries}{21}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Ciphers}{21}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Stream Cipher}{21}{subsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}System Overview}{23}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Connections}{25}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Cipher suit}{25}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}TLS 1.0\IeC {\textendash }1.2 handshake}{25}{subsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Connections}{26}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Anonymity inside TLS}{29}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Cell Packet Format}{31}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Cell versions}{31}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.1}Headers and Commands}{31}{subsection.7.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.2}Further explanations}{33}{subsection.7.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Negotiating and initializing connections}{37}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{37}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{37}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{37}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{38}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Negotiating versions with VERSIONS cells}{38}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{38}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{38}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{38}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{38}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{38}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}CERTS cells}{39}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{39}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{X509 certificated encoding}{39}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{ED25519 encoding}{39}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{40}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{40}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{40}{section*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{40}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{41}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}AUTH\_CHALLENGE cells}{41}{section.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{41}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{41}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.4}AUTHENTICATE cells}{41}{section.8.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{41}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section*.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.1}Link authentication type 1: RSA-SHA256-TLSSecret}{42}{subsection.8.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4.2}Link authentication type 3: Ed25519-SHA256-RFC5705}{42}{subsection.8.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{42}{section*.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{section*.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{section*.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.5}NETINFO cells}{43}{section.8.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{43}{section*.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{44}{section*.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{44}{section*.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{44}{section*.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{44}{section*.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Circuit management}{45}{chapter.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}CREATE and CREATED cells}{45}{section.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{45}{section*.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{45}{section*.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{45}{section*.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{45}{section*.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.1}Handling CREATED Cells}{46}{subsection.9.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{46}{section*.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.2}Choosing circuit IDs in create cells}{47}{subsection.9.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.3}EXTEND and EXTENDED cells}{47}{subsection.9.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{47}{section*.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.66}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.4}The "TAP" handshake}{48}{subsection.9.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{49}{section*.68}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{49}{section*.69}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{49}{section*.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{49}{section*.71}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{49}{section*.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.5}The "ntor" handshake}{49}{subsection.9.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{49}{section*.73}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.74}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.75}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.76}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.77}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.78}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{50}{section*.79}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.80}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.81}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.82}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.6}CREATE\_FAST/CREATED\_FAST cells}{51}{subsection.9.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.83}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.84}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.85}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.86}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.87}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.88}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.2}Setting circuit keys}{51}{section.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.1}KDF-TOR}{51}{subsection.9.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{51}{section*.89}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.90}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.91}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.92}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.93}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.2}KDF-RFC5869}{52}{subsection.9.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.94}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.95}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{52}{section*.96}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.3}Creating circuits}{53}{section.9.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.97}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.98}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.99}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.100}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{53}{section*.101}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.1}Canonical connections}{54}{subsection.9.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.102}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.4}Tearing down circuits}{54}{section.9.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.103}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.104}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.105}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.106}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.107}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{54}{section*.108}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.109}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.110}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.111}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.112}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.113}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.5}Routing relay cells}{55}{section.9.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.5.1}Circuit ID Checks}{55}{subsection.9.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{55}{section*.114}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.5.2}Forward Direction}{56}{subsection.9.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Routing from the Origin}{56}{section*.115}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Relaying Forward at Onion Routers}{56}{section*.116}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{56}{section*.117}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{56}{section*.118}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.5.3}Backward Direction}{56}{subsection.9.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Relaying Backward at Onion Routers}{56}{section*.119}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Routing to the Origin}{56}{section*.120}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.5.4}Handling relay\_early cells}{56}{subsection.9.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{56}{section*.121}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{57}{section*.122}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{57}{section*.123}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {IV}{Cryptography Guide}}{59}{part.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.6}AES}{61}{section.9.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Counter mode encryption}{61}{section*.124}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Implementation in OpenSSL}{62}{section*.125}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{EVP api}{62}{section*.126}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.7}RSA}{63}{section.9.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.7.1}MGF}{63}{subsection.9.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{MGF1}{63}{section*.127}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.7.2}OAEP}{64}{subsection.9.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Encryption operation}{64}{section*.128}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.8}SHA-1}{66}{section.9.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.8.1}Algorithm overview}{66}{subsection.9.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\leavevmode {\color {ocre}Bibliography}}{69}{chapter*.129}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Articles}{69}{section*.130}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Books}{69}{section*.131}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{misc}{69}{section*.132}
+\contentsfinish 
