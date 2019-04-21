@@ -508,9 +508,14 @@ When creating a circuit through the network, the circuit creator
     \begin{itemize}
         \item N MAY be 1 for non-anonymous directory mirror, introduction point,
         or service rendezvous connections.
-        \item N SHOULD be 3 or more for anonymous connections.
+        \item N SHOULD be 3 or more for anonymous connections \ref{fig:circuit_tor} .
         Some end nodes accept streams, others are introduction
         or rendezvous points (see rend-spec-{v2,v3}.txt).
+        \begin{figure}[h]
+			\centering\includegraphics[scale=0.35]{circuit_tor}
+			\caption{Tor Circuit Creation \cite{tor_slideshare}}
+			\label{fig:circuit_tor} % Unique label used for referencing the figure in-text
+			\end{figure}
     \end{itemize}
     \item Choose a chain of (N-1) onion routers (R\_1...R\_N-1) to constitute
     the path, such that no router appears in the path twice.

@@ -3,6 +3,8 @@
 \chapter{System Overview}
 
 Tor is a distributed overlay network designed to anonymize low-latency TCP-based applications such as web browsing, secure shell, and instant messaging. Clients choose a path through the network and build a circuit, in which each node in the path knows its predecessor and successor, but no other nodes in the circuit.  Traffic flowing down the circuit is sent in fixed-size cells, which are unwrapped by a symmetric key at each node (like the layers of an onion) and relayed downstream.
+\\
+Each onion router maintains a long-term identity key and a short-term onion key. The identity key is used to sign TLS certificates, to sign the OR’s router descriptor (a summary of its keys, address, bandwidth, exit policy, and so on), and (by directory servers) to sign directories. The onion key is used to decrypt requests from users to set up a circuit and negotiate ephemeral keys. The TLS protocol also establishes a short- term link key when communicating between ORs. Short-term keys are rotated periodically and independently, to limit the impact of key compromise. \cite{tor_paper}
 
 Every Tor relay has multiple public/private keypairs. As referenced in chapter \ref{sec:torspec-0} any keypairs has been generated with on of these methods: 1024-bit RSA, Curve25519, Ed25519.
 
