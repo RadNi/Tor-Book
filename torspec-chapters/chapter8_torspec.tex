@@ -1,30 +1,62 @@
-\chapter{Rate Limiting And Fairness}
+\chapter{Congestion and Flow Control}
 \textbf{Intro}
 \\\\
-Not all the users of \textit{Tor} wish to service as much as they can, they maybe want to limit their service and bandwidth usage. In this chapter we will investigate the Tors approach toward rate limiting and fairness.\\\\
-\textbf{Tors Approach}\\
+Rate limiting is not enough Of course and Congestion control mechanism for better servicing will be necessary. imagine many clients with huge amount of traffic use the same circuit, the consequence will be that the circuit might become saturated by a time. another scenario might be that an attacker sends a huge amount of data that do not read it at the end. so here some congestion control and flow control mechanism is needed, we will describe the Tors approach for the problem.
+\\\\
+\section{Tors Approach}
+Tor will use two methods for solution that the second uses a modified version of first solution. the first solution will discuss about congestion control for circuits and then the second solution will discuss on multiple streams that are going through that circuit.
 \\
-Tor takes the \textit{token bucket} approach (see Fig \ref{fig:Token_bucket}) for achieving rate limiting to the users. with this approach, the average rate of output will be equal to incoming bytes while allowing short-term burst. so with this approach in practice the incoming bytes to be transferred will be limited.\\
-\\
+\subsection{Circuit-level throttling}
+To control a circuit’s bandwidth
+usage, each OR keeps track of two windows. (See Fig \ref{fig:CongestionTor}) The packaging
+window tracks how many relay data cells the OR is allowed to
+package (from incoming TCP streams) for transmission back
+to the OP, and the delivery window tracks how many relay
+data cells it is willing to deliver to TCP streams outside the
+network. Each window is initialized (say, to 1000 data cells).\\
 \begin{figure}[!h]
-\centering\includegraphics[scale=0.4]{token_bucket}
-\caption{Token Bucket Approach - from \textit{geekforgeeks.com} website}
-\label{fig:Token_bucket} % Unique label used for referencing the figure in-text
+\centering\includegraphics[scale=0.4]{CongestionTor}
+\caption{The delivery and packaging window in a OR/OP}
+\label{fig:CongestionTor} % Unique label used for referencing the figure in-text
 \end{figure}
 \\
+When a data cell is packaged or delivered, the appropriate
+window is decremented. When an OR has received enough
+data cells (currently 100, see dir-spec.txt), it sends a relay sendme cell towards
+the OP, with streamID zero. When an OR receives a relay
+sendme cell with streamID zero (The body SHOULD be ignored)
+, it increments its packaging window. Either of these cells increments the corresponding
+window by 100. If the packaging window reaches 0, the OR
+stops reading from TCP connections for all streams on the
+corresponding circuit, and sends no more relay data cells until
+receiving a relay sendme cell. You can see the sample scenario in Fig \ref{fig:CongestionTor2} .
 \\
-\textbf{Distinguishing Interactive and Bulk Streams }\\
+The OP behaves identically, except that it must track a
+packaging window and a delivery window for every OR in
+the circuit. If a packaging window reaches 0, it stops reading
+from streams destined for that OR.
 \\
-have in mind that for TCP connections, for every bit of information to transfer we have to transfer a whole cell of 512 bytes (we can't wait to receive enough bytes to fill-up the cell, maybe it is an interactive scenario that the sender waits for the reply ).\\
-In-order to better service the clients, Tor distinguishes between bulk streams and interactive streams by their frequency in which they supply cells. the algorithm and idea is based on Rennhard et al’s design. with this approach Tor tries to give a preferential service to interactive streams and good overall service ( best effort ) to bulk streams. but have in mind with this preferential services the timing end-to-end attack is possible.\\
-
-\textbf{Rate Limiting Implementation}\\
+An OR or OP sends cells to increment its delivery window when the
+corresponding window value falls under some threshold (900).
 \\
-Tor, as we mentioned before, uses a token bucket approach ( one for reads, one for writes ).\\
-Since version 0.2.0.X tor let the clients use additional token buckets to specify their strict rate limiting policies on the "relayed" traffic.\\
-To avoid partitioning concerns we combine both classes of traffic over a given OR connection, and keep track of the last time we read or wrote a high-priority (non-relayed) cell. If it's been less than N seconds (currently N=30), we give the whole connection high priority, else we give the whole connection low priority. We also give low priority to reads and writes for connections that are serving directory information. see proposal 111 for more details.\\
+\begin{figure}[!h]
+\centering\includegraphics[scale=0.4]{CongestionTor2}
+\caption{Circuit-level Congestion Control Scenario}
+\label{fig:CongestionTor2} % Unique label used for referencing the figure in-text
+\end{figure}
 \\
-
-
-
-
+\subsection{Stream-level throttling}
+Stream-level Congestion Control is the same, ORs
+and OPs use relay sendme cells to implement end-to-end flow
+control for individual streams across circuits. \\
+Each stream
+begins with a packaging window (currently 500 cells), and
+increments the window by a fixed value (50) upon receiving a relay sendme cell. \\
+ Rather than always returning a relay
+sendme cell as soon as enough cells have arrived, the stream level congestion control also has to check whether data has
+been successfully flushed onto the TCP stream; it sends the
+relay sendme cell only when the number of bytes pending to
+be flushed is under some threshold (currently 10 cells worth).\\
+for further information please refer to Section 8 of TorDesign. \cite{tor_paper}\\
+Stream-level RELAY\_SENDME cells are distinguished by having nonzero
+StreamID. They are still empty; the body still SHOULD be ignored.\\
