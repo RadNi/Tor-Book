@@ -2051,20 +2051,31 @@
   <bcf:section number="0">
     <bcf:citekey order="1">article_key</bcf:citekey>
     <bcf:citekey order="2">book_key</bcf:citekey>
-    <bcf:citekey order="3">ciphersuit-wiki</bcf:citekey>
+    <bcf:citekey order="3">tor_paper</bcf:citekey>
     <bcf:citekey order="4">ciphersuit-wiki</bcf:citekey>
     <bcf:citekey order="5">ciphersuit-wiki</bcf:citekey>
     <bcf:citekey order="6">ciphersuit-wiki</bcf:citekey>
-    <bcf:citekey order="7">TLS-meduim</bcf:citekey>
-    <bcf:citekey order="8">ciphersuit-wiki</bcf:citekey>
+    <bcf:citekey order="7">ciphersuit-wiki</bcf:citekey>
+    <bcf:citekey order="8">TLS-meduim</bcf:citekey>
     <bcf:citekey order="9">ciphersuit-wiki</bcf:citekey>
     <bcf:citekey order="10">ciphersuit-wiki</bcf:citekey>
-    <bcf:citekey order="11">crl_rfc</bcf:citekey>
+    <bcf:citekey order="11">ciphersuit-wiki</bcf:citekey>
     <bcf:citekey order="12">crl_rfc</bcf:citekey>
-    <bcf:citekey order="13">pkcs</bcf:citekey>
-    <bcf:citekey order="14">pkcs</bcf:citekey>
-    <bcf:citekey order="15">sha-1-wiki</bcf:citekey>
-    <bcf:citekey order="16">sha-1-slideshare</bcf:citekey>
+    <bcf:citekey order="13">crl_rfc</bcf:citekey>
+    <bcf:citekey order="14">tor_slideshare</bcf:citekey>
+    <bcf:citekey order="15">tor_paper</bcf:citekey>
+    <bcf:citekey order="16">tor_paper</bcf:citekey>
+    <bcf:citekey order="17">tor_paper</bcf:citekey>
+    <bcf:citekey order="18">tor_slideshare</bcf:citekey>
+    <bcf:citekey order="19">tor_paper</bcf:citekey>
+    <bcf:citekey order="20">tor_paper</bcf:citekey>
+    <bcf:citekey order="21">stackDNS</bcf:citekey>
+    <bcf:citekey order="22">tor_slideshare</bcf:citekey>
+    <bcf:citekey order="23">tor_slideshare</bcf:citekey>
+    <bcf:citekey order="24">pkcs</bcf:citekey>
+    <bcf:citekey order="25">pkcs</bcf:citekey>
+    <bcf:citekey order="26">sha-1-wiki</bcf:citekey>
+    <bcf:citekey order="27">sha-1-slideshare</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global" type="entry" sortscheme="nyt" sortnamekeyscheme="global">
   <bcf:sorting>

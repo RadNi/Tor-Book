@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  2 APR 2019 00:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  29 MAY 2019 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1589,8 +1589,8 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 \@quotelevel=\count382
 \@quotereset=\count383
 (./main.aux (./title.aux) (./cw.aux) (./table_of_content.aux) (./part1.aux)
-(./part2.aux) (./torspec.aux) (./cryptography_guide.aux) (./bibliography.aux)
-(./index.aux))
+(./part2.aux) (./torspec.aux) (./netcomp.aux) (./cryptography_guide.aux)
+(./bibliography.aux) (./index.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -1608,7 +1608,8 @@ LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 54.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -1894,7 +1895,7 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <30> not available
 
 ] [8]
 Chapter 1.
-<Pictures/chapter_head_2.pdf, id=328, 3581.38pt x 1790.69pt>
+<Pictures/chapter_head_2.pdf, id=361, 3581.38pt x 1790.69pt>
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 
 <use Pictures/chapter_head_2.pdf>
@@ -1982,7 +1983,7 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 14.
 
-<Pictures/placeholder.jpg, id=410, 351.3125pt x 193.72375pt>
+<Pictures/placeholder.jpg, id=443, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
@@ -2020,7 +2021,11 @@ File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 
-Underfull \vbox (badness 4205) has occurred while \output is active []
+
+LaTeX Warning: Citation 'tor_paper' on page 23 undefined on input line 7.
+
+
+Underfull \vbox (badness 4995) has occurred while \output is active []
 
  [23])
 (./torspec-chapters/chapter2_torspec.tex [24]
@@ -2046,7 +2051,7 @@ LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 8.
 LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 13
 .
 
-<Pictures/TLS-Handshake.png, id=499, 677.53125pt x 417.56pt>
+<Pictures/TLS-Handshake.png, id=545, 677.53125pt x 417.56pt>
 File: Pictures/TLS-Handshake.png Graphic file (type png)
 
 <use Pictures/TLS-Handshake.png>
@@ -2067,7 +2072,7 @@ LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 22
 LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 24
 .
 
-<Pictures/TLSv1-12_algs.png, id=501, 730.73pt x 217.81375pt>
+<Pictures/TLSv1-12_algs.png, id=547, 730.73pt x 217.81375pt>
 File: Pictures/TLSv1-12_algs.png Graphic file (type png)
 
 <use Pictures/TLSv1-12_algs.png>
@@ -2332,23 +2337,192 @@ th HTYPE of 'tap' and length of TAP_C_HANDSHAKE_LEN.
  []
 
 [46] [47] [48] [49] [50] [51] [52]
-Underfull \vbox (badness 2150) has occurred while \output is active []
+<Pictures/circuit_tor.png, id=836, 622.325pt x 387.4475pt>
+File: Pictures/circuit_tor.png Graphic file (type png)
 
- [53]
-[54] [55] [56])) [57]
+<use Pictures/circuit_tor.png>
+Package pdftex.def Info: Pictures/circuit_tor.png used on input line 515.
+(pdftex.def)             Requested size: 217.817pt x 135.60864pt.
+
+
+LaTeX Warning: Citation 'tor_slideshare' on page 53 undefined on input line 516
+.
+
+
+Underfull \vbox (badness 2809) has occurred while \output is active []
+
+ [53 <./Pictures/circuit_tor.png>] [54] [55] [56]) (./torspec-chapters/chapter6
+_torspec.tex [57] [58
+
+]
+Chapter 10.
+File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
+<use Pictures/chapter_head_2.pdf>
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
+ [59] [60]
+Overfull \hbox (3.24484pt too wide) in paragraph at lines 162--162
+[]    \T1/cmtt/m/n/10.95 A number of seconds (TTL) for which the address may be
+ cached [4 octets][] 
+ []
+
+
+Overfull \hbox (3.24484pt too wide) in paragraph at lines 169--169
+[]    \T1/cmtt/m/n/10.95 A number of seconds (TTL) for which the address may be
+ cached [4 octets][] 
+ []
+
+[61]
+Overfull \hbox (30.87433pt too wide) in paragraph at lines 220--222
+[]\T1/ptm/m/n/10.95 (-20) If the Tor re-lay is not run-ning a di-rec-tory ser-v
+ice, it should re-spond with a REA-SON_NOTDIRECTORY
+ []
+
+[62] [63] [64]) (./torspec-chapters/chapter7_torspec.tex [65] [66
+
+]
+Chapter 11.
+File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
+<use Pictures/chapter_head_2.pdf>
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
+
+<Pictures/token_bucket.png, id=1004, 575.14874pt x 403.5075pt>
+File: Pictures/token_bucket.png Graphic file (type png)
+
+<use Pictures/token_bucket.png>
+Package pdftex.def Info: Pictures/token_bucket.png used on input line 10.
+(pdftex.def)             Requested size: 230.05542pt x 161.40013pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--20
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67 <./Pictures/token_bucket.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 21--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--27
+
+ []
+
+)) [68]
+\openout2 = `netcomp.aux'.
+
+ (./netcomp.tex (./main.ptc) [69
+
+
+
+] [70] (./hidden_services.tex
+Chapter 12.
+File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
+<use Pictures/chapter_head_2.pdf>
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
+(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
+
+
+LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 6.
+
+
+LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'tor_slideshare' on page 71 undefined on input line 9.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 9.
+
+LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'stackDNS' on page 71 undefined on input line 14.
+
+[71
+
+] <Pictures/HS_tor.png, id=1036, 620.3175pt x 464.73625pt>
+File: Pictures/HS_tor.png Graphic file (type png)
+
+<use Pictures/HS_tor.png>
+Package pdftex.def Info: Pictures/HS_tor.png used on input line 27.
+(pdftex.def)             Requested size: 248.1226pt x 185.8912pt.
+
+
+LaTeX Warning: Citation 'tor_slideshare' on page 72 undefined on input line 28.
+
+
+[72 <./Pictures/HS_tor.png>]
+<Pictures/HS_circuit_tor.png, id=1063, 627.34375pt x 404.51125pt>
+File: Pictures/HS_circuit_tor.png Graphic file (type png)
+
+<use Pictures/HS_circuit_tor.png>
+Package pdftex.def Info: Pictures/HS_circuit_tor.png used on input line 55.
+(pdftex.def)             Requested size: 313.6711pt x 202.25513pt.
+
+
+LaTeX Warning: Citation 'tor_slideshare' on page 73 undefined on input line 56.
+
+
+)) [73 <./Pictures/HS_circuit_tor.png>]
 \openout2 = `cryptography_guide.aux'.
 
- (./cryptography_guide.tex [58
+ (./cryptography_guide.tex [74
 
 
 
-] (./main.ptc) [59] [60]
+]
+(./main.ptc) [75] [76]
 (./cryptography-guide-chapters/chapter1_cryptography_guide.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
  []
 
-<Pictures/AES_cntr.png, id=885, 1206.5075pt x 485.815pt>
+<Pictures/AES_cntr.png, id=1101, 1206.5075pt x 485.815pt>
 File: Pictures/AES_cntr.png Graphic file (type png)
 
 <use Pictures/AES_cntr.png>
@@ -2359,14 +2533,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--45
 
  []
 
-<Pictures/AES_cntr_kh.png, id=887, 490.83376pt x 219.82124pt>
+<Pictures/AES_cntr_kh.png, id=1103, 490.83376pt x 219.82124pt>
 File: Pictures/AES_cntr_kh.png Graphic file (type png)
 
 <use Pictures/AES_cntr_kh.png>
 Package pdftex.def Info: Pictures/AES_cntr_kh.png used on input line 47.
 (pdftex.def)             Requested size: 392.66753pt x 175.85722pt.
- [61 <./Pictures/AES_cntr.png>])
-(./cryptography-guide-chapters/chapter2_cryptography_guide.tex [62 <./Pictures/
+ [77 <./Pictures/AES_cntr.png>])
+(./cryptography-guide-chapters/chapter2_cryptography_guide.tex [78 <./Pictures/
 AES_cntr_kh.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 8--31
 
@@ -2383,10 +2557,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--35
  []
 
 
-LaTeX Warning: Citation 'pkcs' on page 63 undefined on input line 41.
+LaTeX Warning: Citation 'pkcs' on page 79 undefined on input line 41.
 
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
 
 Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
@@ -2404,7 +2576,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
-[63]
+[79]
 Overfull \hbox (0.90472pt too wide) in paragraph at lines 76--96
 [][] 
  []
@@ -2414,7 +2586,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--101
 
  []
 
-[64]
+[80]
 Underfull \hbox (badness 10000) in paragraph at lines 113--116
 
  []
@@ -2430,7 +2602,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--131
  []
 
 
-LaTeX Warning: Citation 'pkcs' on page 65 undefined on input line 131.
+LaTeX Warning: Citation 'pkcs' on page 81 undefined on input line 131.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--134
@@ -2445,8 +2617,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--137
 
 Underfull \vbox (badness 2512) has occurred while \output is active []
 
- [65]
-<Pictures/EME-OAEP.png, id=980, 599.23875pt x 508.90125pt>
+ [81]
+<Pictures/EME-OAEP.png, id=1195, 599.23875pt x 508.90125pt>
 File: Pictures/EME-OAEP.png Graphic file (type png)
 
 <use Pictures/EME-OAEP.png>
@@ -2477,7 +2649,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 ) (./cryptography-guide-chapters/chapter3_cryptography_guide.tex
-<Pictures/SHA-1-wiki.png, id=981, 1284.8pt x 1337.99875pt>
+<Pictures/SHA-1-wiki.png, id=1196, 1284.8pt x 1337.99875pt>
 File: Pictures/SHA-1-wiki.png Graphic file (type png)
 
 <use Pictures/SHA-1-wiki.png>
@@ -2485,10 +2657,10 @@ Package pdftex.def Info: Pictures/SHA-1-wiki.png used on input line 8.
 (pdftex.def)             Requested size: 141.32843pt x 147.18031pt.
 
 
-LaTeX Warning: Citation 'sha-1-wiki' on page 66 undefined on input line 13.
+LaTeX Warning: Citation 'sha-1-wiki' on page 82 undefined on input line 13.
 
 
-LaTeX Warning: Citation 'sha-1-slideshare' on page 66 undefined on input line 1
+LaTeX Warning: Citation 'sha-1-slideshare' on page 82 undefined on input line 1
 5.
 
 
@@ -2496,21 +2668,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--18
 
  []
 
-[66 <./Pictures/EME-OAEP.png> <./Pictures/SHA-1-wiki.png>]
-<Pictures/SHA-1.png, id=993, 814.04124pt x 349.305pt>
+[82 <./Pictures/EME-OAEP.png> <./Pictures/SHA-1-wiki.png>]
+<Pictures/SHA-1.png, id=1209, 814.04124pt x 349.305pt>
 File: Pictures/SHA-1.png Graphic file (type png)
- <use Pictures/SHA-1.png>
+
+<use Pictures/SHA-1.png>
 Package pdftex.def Info: Pictures/SHA-1.png used on input line 23.
 (pdftex.def)             Requested size: 244.21425pt x 104.7923pt.
 
-<Pictures/SHA1-init.png, id=994, 661.47125pt x 241.90375pt>
+<Pictures/SHA1-init.png, id=1210, 661.47125pt x 241.90375pt>
 File: Pictures/SHA1-init.png Graphic file (type png)
 
 <use Pictures/SHA1-init.png>
 Package pdftex.def Info: Pictures/SHA1-init.png used on input line 29.
 (pdftex.def)             Requested size: 198.4429pt x 72.57167pt.
 
-<Pictures/SHA-1-k.png, id=995, 290.08376pt x 161.60374pt>
+<Pictures/SHA-1-k.png, id=1211, 290.08376pt x 161.60374pt>
 File: Pictures/SHA-1-k.png Graphic file (type png)
 
 <use Pictures/SHA-1-k.png>
@@ -2521,14 +2694,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 
  []
 
-[67 <./Pictures/SHA-1.png> <./Pictures/SHA1-init.png> <./Pictures/SHA-1-k.png>]
-<Pictures/SHA-1-P.png, id=1017, 684.5575pt x 297.11pt>
+[83 <./Pictures/SHA-1.png> <./Pictures/SHA1-init.png> <./Pictures/SHA-1-k.png>]
+<Pictures/SHA-1-P.png, id=1232, 684.5575pt x 297.11pt>
 File: Pictures/SHA-1-P.png Graphic file (type png)
 
 <use Pictures/SHA-1-P.png>
 Package pdftex.def Info: Pictures/SHA-1-P.png used on input line 57.
 (pdftex.def)             Requested size: 342.27791pt x 148.55463pt.
-)) [68 <./Pictures/SHA-1-P.png>]
+)) [84 <./Pictures/SHA-1-P.png>]
 \openout2 = `bibliography.aux'.
 
  (./bibliography.tex
@@ -2550,14 +2723,14 @@ Package biblatex Warning: Type 'misc' not found on input line 20.
 
 LaTeX Warning: Empty bibliography on input line 20.
 
-) [69
+) [85
 
 
 
 ]
 \openout2 = `index.aux'.
 
- (./index.tex [70
+ (./index.tex [86
 
 
 
@@ -2567,13 +2740,13 @@ No file main.ind.
 \tf@ptc=\write7
 \openout7 = `main.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (./main.aux (./title.aux) (./cw.aux) (./table_of_content.aux) (./part1.aux)
-(./part2.aux) (./torspec.aux) (./cryptography_guide.aux) (./bibliography.aux)
-(./index.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 110.
+(./part2.aux) (./torspec.aux) (./netcomp.aux) (./cryptography_guide.aux)
+(./bibliography.aux) (./index.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 115.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2591,14 +2764,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36946 strings out of 493029
- 668571 string characters out of 6136233
- 1202927 words of memory out of 5000000
- 39101 multiletter control sequences out of 15000+600000
- 137481 words of font info for 314 fonts, out of 8000000 for 9000
+ 37125 strings out of 493029
+ 671034 string characters out of 6136233
+ 1206183 words of memory out of 5000000
+ 39147 multiletter control sequences out of 15000+600000
+ 137677 words of font info for 317 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,59p,10511b,3282s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.133} has been referenced but does not ex
+pdfTeX warning (dest): name{section*.175} has been referenced but does not ex
 ist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
@@ -2617,10 +2790,10 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on main.pdf (70 pages, 1441690 bytes).
+Output written on main.pdf (86 pages, 4680448 bytes).
 PDF statistics:
- 1340 PDF objects out of 1440 (max. 8388607)
- 1088 compressed objects within 11 object streams
- 474 named destinations out of 1000 (max. 500000)
- 68067 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1606 PDF objects out of 1728 (max. 8388607)
+ 1308 compressed objects within 14 object streams
+ 581 named destinations out of 1000 (max. 500000)
+ 68159 words of extra memory for PDF output out of 74296 (max. 10000000)
 
