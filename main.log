@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  29 MAY 2019 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.12)  19 OCT 2019 20:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1588,9 +1588,8 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count382
 \@quotereset=\count383
-(./main.aux (./title.aux) (./cw.aux) (./table_of_content.aux) (./part1.aux)
-(./part2.aux) (./torspec.aux) (./netcomp.aux) (./cryptography_guide.aux)
-(./bibliography.aux) (./index.aux))
+(./main.aux (./title.aux) (./table_of_content.aux) (./torspec.aux)
+(./netcomp.aux) (./cryptography_guide.aux) (./bibliography.aux) (./index.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -1795,64 +1794,27 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Pictures/background.pdf>
 ]
-\openout2 = `cw.aux'.
-
- (./cw.tex
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 5.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
+\openout2 = `table_of_content.aux'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+(./table_of_content.tex [2
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 11.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-) [2
 
 
 ]
-\openout2 = `table_of_content.aux'.
-
- (./table_of_content.tex
-<Pictures/chapter_head_1.pdf, id=25, 597.432pt x 298.716pt>
+<Pictures/chapter_head_1.pdf, id=20, 597.432pt x 298.716pt>
 File: Pictures/chapter_head_1.pdf Graphic file (type pdf)
 
 <use Pictures/chapter_head_1.pdf>
 Package pdftex.def Info: Pictures/chapter_head_1.pdf used on input line 7.
 (pdftex.def)             Requested size: 597.50787pt x 298.77907pt.
  (./main.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
@@ -1865,20 +1827,16 @@ LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 7.
- [3
-
-
-
- <./Pictures/chapter_head_1.pdf>] [4])
+ [3 <./Pictures/chapter_head_1.pdf>] [4])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
  [5] [6
 
 ])
-\openout2 = `part1.aux'.
+\openout2 = `torspec.aux'.
 
- (./part1.tex
+ (./torspec.tex
 \c@ttl@toc@default=\count392
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <220> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 1.
@@ -1894,164 +1852,63 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <30> not available
 
 
 ] [8]
+(./torspec-chapters/chapter0_torspec.tex
 Chapter 1.
-<Pictures/chapter_head_2.pdf, id=361, 3581.38pt x 1790.69pt>
+<Pictures/chapter_head_2.pdf, id=308, 3581.38pt x 1790.69pt>
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 
-<use Pictures/chapter_head_2.pdf>
-Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 9.
-(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
- [9
-
- <./Pictures/chapter_head_2.pdf>]
-
-LaTeX Warning: Citation 'article_key' on page 10 undefined on input line 19.
-
-
-LaTeX Warning: Citation 'book_key' on page 10 undefined on input line 19.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
-[10]
-Chapter 2.
-File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
-<use Pictures/chapter_head_2.pdf>
-Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 55.
-(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
-Package mdframed Info: mdframed works in twoside mode on input line 64.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 64.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 64.
-LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 64.
-LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 64.
-Package mdframed Info: mdframed works in twoside mode on input line 75.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 75.
-Package mdframed Info: mdframed works in twoside mode on input line 85.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 85.
- [11
-
-]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
-Package mdframed Info: mdframed works in twoside mode on input line 123.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 123.
-LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <6> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 158.
-LaTeX Font Info:    Font shape `T1/pag/b/n' in size <6> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 158.
- [12]
-Package mdframed Info: mdframed works in twoside mode on input line 178.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 178.
-) [13]
-\openout2 = `part2.aux'.
-
- (./part2.tex [14
-
-
-
-] (./main.ptc) [15] [16]
-Chapter 3.
-File: Pictures/chapter_head_1.pdf Graphic file (type pdf)
-<use Pictures/chapter_head_1.pdf>
-Package pdftex.def Info: Pictures/chapter_head_1.pdf used on input line 9.
-(pdftex.def)             Requested size: 597.50787pt x 298.77907pt.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 14.
-
-<Pictures/placeholder.jpg, id=443, 351.3125pt x 193.72375pt>
-File: Pictures/placeholder.jpg Graphic file (type jpg)
-
-<use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 46.
-(pdftex.def)             Requested size: 175.6558pt x 96.86163pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [17
-
-] [18 <./Pictures/placeholder.jpg>]
-\openout2 = `torspec.aux'.
-
- (./torspec.tex (./main.ptc) [19
-
-
-
-]
-[20] (./torspec-chapters/chapter0_torspec.tex
-Chapter 4.
-File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 ) (./torspec-chapters/chapter1_torspec.tex
-[21
+[9
 
-] [22
+ <./Pictures/chapter_head_2.pdf>] [10
 
 ]
-Chapter 5.
+Chapter 2.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 
 
-LaTeX Warning: Citation 'tor_paper' on page 23 undefined on input line 7.
+LaTeX Warning: Citation 'tor_paper' on page 11 undefined on input line 7.
 
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 14.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 14.
 
 Underfull \vbox (badness 4995) has occurred while \output is active []
 
- [23])
-(./torspec-chapters/chapter2_torspec.tex [24]
-Chapter 6.
+ [11])
+(./torspec-chapters/chapter2_torspec.tex [12]
+Chapter 3.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 4.
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 4.
 
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 6.
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 6.
 
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 8.
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 8.
 
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 13
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 13
 .
 
-<Pictures/TLS-Handshake.png, id=545, 677.53125pt x 417.56pt>
+<Pictures/TLS-Handshake.png, id=338, 677.53125pt x 417.56pt>
 File: Pictures/TLS-Handshake.png Graphic file (type png)
 
 <use Pictures/TLS-Handshake.png>
@@ -2059,20 +1916,20 @@ Package pdftex.def Info: Pictures/TLS-Handshake.png used on input line 16.
 (pdftex.def)             Requested size: 406.52188pt x 250.53792pt.
 
 
-LaTeX Warning: Citation 'TLS-meduim' on page 25 undefined on input line 17.
+LaTeX Warning: Citation 'TLS-meduim' on page 13 undefined on input line 17.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 22
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 22
 .
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 24
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 24
 .
 
-<Pictures/TLSv1-12_algs.png, id=547, 730.73pt x 217.81375pt>
+<Pictures/TLSv1-12_algs.png, id=340, 730.73pt x 217.81375pt>
 File: Pictures/TLSv1-12_algs.png Graphic file (type png)
 
 <use Pictures/TLSv1-12_algs.png>
@@ -2084,7 +1941,7 @@ Overfull \hbox (11.65002pt too wide) in paragraph at lines 28--29
  []
 
 
-LaTeX Warning: Citation 'ciphersuit-wiki' on page 25 undefined on input line 29
+LaTeX Warning: Citation 'ciphersuit-wiki' on page 13 undefined on input line 29
 .
 
 
@@ -2095,17 +1952,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-[25
+[13
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 47--51
 
  []
 
-[26 <./Pictures/TLS-Handshake.png> <./Pictures/TLSv1-12_algs.png>]
+[14 <./Pictures/TLS-Handshake.png> <./Pictures/TLSv1-12_algs.png>]
 
-LaTeX Warning: Citation 'crl_rfc' on page 27 undefined on input line 64.
+LaTeX Warning: Citation 'crl_rfc' on page 15 undefined on input line 64.
 
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 66.
 
 Overfull \hbox (19.97226pt too wide) in paragraph at lines 81--82
 [][][][][][][][][][][][][][][][][][][][][][][] 
@@ -2122,12 +1987,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--93
  []
 
 
-LaTeX Warning: Citation 'crl_rfc' on page 27 undefined on input line 94.
+LaTeX Warning: Citation 'crl_rfc' on page 15 undefined on input line 94.
 
-[27] [28]) (./torspec-chapters/chapter3_torspec.tex [29] [30
+[15]
+LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10> not available
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 131.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 131.
+ [16]) (./torspec-chapters/chapter3_torspec.tex [17] [18
 
 ]
-Chapter 7.
+Chapter 4.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
@@ -2185,7 +2055,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--120
 
  []
 
-[31]
+[19]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2219,7 +2089,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--152
 
  []
 
-[32])
+[20])
 Underfull \hbox (badness 10000) in paragraph at lines 160--29
 
  []
@@ -2309,26 +2179,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--29
 
  []
 
-[33]
+[21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-(./torspec-chapters/chapter4_torspec.tex [35] [36
+ [22]
+(./torspec-chapters/chapter4_torspec.tex [23] [24
 
 ]
-Chapter 8.
+Chapter 5.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
- [37] [38] [39] [40] [41] [42] [43])
-(./torspec-chapters/chapter5_torspec.tex [44]
-Chapter 9.
+ [25] [26]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 123.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [27] [28] [29]
+[30] [31]) (./torspec-chapters/chapter5_torspec.tex [32]
+Chapter 6.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
- [45
+ [33
 
 ]
 Overfull \hbox (58.7632pt too wide) in paragraph at lines 57--61
@@ -2336,8 +2217,8 @@ Overfull \hbox (58.7632pt too wide) in paragraph at lines 57--61
 th HTYPE of 'tap' and length of TAP_C_HANDSHAKE_LEN.
  []
 
-[46] [47] [48] [49] [50] [51] [52]
-<Pictures/circuit_tor.png, id=836, 622.325pt x 387.4475pt>
+[34] [35] [36] [37] [38] [39] [40]
+<Pictures/circuit_tor.png, id=631, 622.325pt x 387.4475pt>
 File: Pictures/circuit_tor.png Graphic file (type png)
 
 <use Pictures/circuit_tor.png>
@@ -2345,22 +2226,22 @@ Package pdftex.def Info: Pictures/circuit_tor.png used on input line 515.
 (pdftex.def)             Requested size: 217.817pt x 135.60864pt.
 
 
-LaTeX Warning: Citation 'tor_slideshare' on page 53 undefined on input line 516
+LaTeX Warning: Citation 'tor_slideshare' on page 41 undefined on input line 516
 .
 
 
 Underfull \vbox (badness 2809) has occurred while \output is active []
 
- [53 <./Pictures/circuit_tor.png>] [54] [55] [56]) (./torspec-chapters/chapter6
-_torspec.tex [57] [58
+ [41 <./Pictures/circuit_tor.png>] [42] [43] [44]) (./torspec-chapters/chapter6
+_torspec.tex [45] [46
 
 ]
-Chapter 10.
+Chapter 7.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
- [59] [60]
+ [47] [48]
 Overfull \hbox (3.24484pt too wide) in paragraph at lines 162--162
 []    \T1/cmtt/m/n/10.95 A number of seconds (TTL) for which the address may be
  cached [4 octets][] 
@@ -2372,22 +2253,22 @@ Overfull \hbox (3.24484pt too wide) in paragraph at lines 169--169
  cached [4 octets][] 
  []
 
-[61]
+[49]
 Overfull \hbox (30.87433pt too wide) in paragraph at lines 220--222
 []\T1/ptm/m/n/10.95 (-20) If the Tor re-lay is not run-ning a di-rec-tory ser-v
 ice, it should re-spond with a REA-SON_NOTDIRECTORY
  []
 
-[62] [63] [64]) (./torspec-chapters/chapter7_torspec.tex [65] [66
+[50] [51] [52]) (./torspec-chapters/chapter7_torspec.tex [53] [54
 
 ]
-Chapter 11.
+Chapter 8.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 
-<Pictures/token_bucket.png, id=1004, 575.14874pt x 403.5075pt>
+<Pictures/token_bucket.png, id=799, 575.14874pt x 403.5075pt>
 File: Pictures/token_bucket.png Graphic file (type png)
 
 <use Pictures/token_bucket.png>
@@ -2431,7 +2312,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--20
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67 <./Pictures/token_bucket.png>]
+ [55 <./Pictures/token_bucket.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 21--27
 
  []
@@ -2446,46 +2327,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--27
 
  []
 
-)) [68]
+) (./torspec-chapters/chapter8_torspec.tex [56]
+Chapter 9.
+File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
+<use Pictures/chapter_head_2.pdf>
+Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 1.
+(pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
+
+<Pictures/CongestionTor.png, id=812, 845.1575pt x 181.67876pt>
+File: Pictures/CongestionTor.png Graphic file (type png)
+
+<use Pictures/CongestionTor.png>
+Package pdftex.def Info: Pictures/CongestionTor.png used on input line 18.
+(pdftex.def)             Requested size: 338.057pt x 72.6702pt.
+
+<Pictures/CongestionTor2.png, id=814, 704.6325pt x 253.94875pt>
+File: Pictures/CongestionTor2.png Graphic file (type png)
+
+<use Pictures/CongestionTor2.png>
+Package pdftex.def Info: Pictures/CongestionTor2.png used on input line 43.
+(pdftex.def)             Requested size: 281.848pt x 101.5777pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--48
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[57
+
+]
+
+LaTeX Warning: Citation 'tor_paper' on page 58 undefined on input line 60.
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
+
+ []
+
+) [58 <./Pictures/CongestionTor.png> <./Pictures/CongestionTor2.png>]
 \openout2 = `netcomp.aux'.
 
- (./netcomp.tex (./main.ptc) [69
+
+(./netcomp.tex (./main.ptc) [59
 
 
 
-] [70] (./hidden_services.tex
-Chapter 12.
+] [60] (./hidden_services.tex
+Chapter 10.
 File: Pictures/chapter_head_2.pdf Graphic file (type pdf)
 <use Pictures/chapter_head_2.pdf>
 Package pdftex.def Info: Pictures/chapter_head_2.pdf used on input line 3.
 (pdftex.def)             Requested size: 597.50787pt x 298.75726pt.
 
 
-LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 6.
+LaTeX Warning: Citation 'tor_paper' on page 61 undefined on input line 6.
 
 
-LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 8.
+LaTeX Warning: Citation 'tor_paper' on page 61 undefined on input line 8.
 
 
-LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 9.
+LaTeX Warning: Citation 'tor_paper' on page 61 undefined on input line 9.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 
-LaTeX Warning: Citation 'tor_slideshare' on page 71 undefined on input line 9.
+LaTeX Warning: Citation 'tor_slideshare' on page 61 undefined on input line 9.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 9.
 
-LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 10.
+LaTeX Warning: Citation 'tor_paper' on page 61 undefined on input line 10.
 
 
-LaTeX Warning: Citation 'tor_paper' on page 71 undefined on input line 12.
+LaTeX Warning: Citation 'tor_paper' on page 61 undefined on input line 12.
 
 
-LaTeX Warning: Citation 'stackDNS' on page 71 undefined on input line 14.
+LaTeX Warning: Citation 'stackDNS' on page 61 undefined on input line 14.
 
-[71
+[61
 
-] <Pictures/HS_tor.png, id=1036, 620.3175pt x 464.73625pt>
+] <Pictures/HS_tor.png, id=849, 620.3175pt x 464.73625pt>
 File: Pictures/HS_tor.png Graphic file (type png)
 
 <use Pictures/HS_tor.png>
@@ -2493,11 +2439,11 @@ Package pdftex.def Info: Pictures/HS_tor.png used on input line 27.
 (pdftex.def)             Requested size: 248.1226pt x 185.8912pt.
 
 
-LaTeX Warning: Citation 'tor_slideshare' on page 72 undefined on input line 28.
+LaTeX Warning: Citation 'tor_slideshare' on page 62 undefined on input line 28.
 
 
-[72 <./Pictures/HS_tor.png>]
-<Pictures/HS_circuit_tor.png, id=1063, 627.34375pt x 404.51125pt>
+[62 <./Pictures/HS_tor.png>]
+<Pictures/HS_circuit_tor.png, id=876, 627.34375pt x 404.51125pt>
 File: Pictures/HS_circuit_tor.png Graphic file (type png)
 
 <use Pictures/HS_circuit_tor.png>
@@ -2505,24 +2451,24 @@ Package pdftex.def Info: Pictures/HS_circuit_tor.png used on input line 55.
 (pdftex.def)             Requested size: 313.6711pt x 202.25513pt.
 
 
-LaTeX Warning: Citation 'tor_slideshare' on page 73 undefined on input line 56.
+LaTeX Warning: Citation 'tor_slideshare' on page 63 undefined on input line 56.
 
 
-)) [73 <./Pictures/HS_circuit_tor.png>]
+)) [63 <./Pictures/HS_circuit_tor.png>]
 \openout2 = `cryptography_guide.aux'.
 
- (./cryptography_guide.tex [74
+ (./cryptography_guide.tex [64
 
 
 
 ]
-(./main.ptc) [75] [76]
+(./main.ptc) [65] [66]
 (./cryptography-guide-chapters/chapter1_cryptography_guide.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
  []
 
-<Pictures/AES_cntr.png, id=1101, 1206.5075pt x 485.815pt>
+<Pictures/AES_cntr.png, id=912, 1206.5075pt x 485.815pt>
 File: Pictures/AES_cntr.png Graphic file (type png)
 
 <use Pictures/AES_cntr.png>
@@ -2533,14 +2479,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--45
 
  []
 
-<Pictures/AES_cntr_kh.png, id=1103, 490.83376pt x 219.82124pt>
+<Pictures/AES_cntr_kh.png, id=914, 490.83376pt x 219.82124pt>
 File: Pictures/AES_cntr_kh.png Graphic file (type png)
 
 <use Pictures/AES_cntr_kh.png>
 Package pdftex.def Info: Pictures/AES_cntr_kh.png used on input line 47.
 (pdftex.def)             Requested size: 392.66753pt x 175.85722pt.
- [77 <./Pictures/AES_cntr.png>])
-(./cryptography-guide-chapters/chapter2_cryptography_guide.tex [78 <./Pictures/
+ [67 <./Pictures/AES_cntr.png>])
+(./cryptography-guide-chapters/chapter2_cryptography_guide.tex [68 <./Pictures/
 AES_cntr_kh.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 8--31
 
@@ -2557,7 +2503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--35
  []
 
 
-LaTeX Warning: Citation 'pkcs' on page 79 undefined on input line 41.
+LaTeX Warning: Citation 'pkcs' on page 69 undefined on input line 41.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 41--42
@@ -2576,7 +2522,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
-[79]
+[69]
 Overfull \hbox (0.90472pt too wide) in paragraph at lines 76--96
 [][] 
  []
@@ -2586,7 +2532,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--101
 
  []
 
-[80]
+[70]
 Underfull \hbox (badness 10000) in paragraph at lines 113--116
 
  []
@@ -2602,7 +2548,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--131
  []
 
 
-LaTeX Warning: Citation 'pkcs' on page 81 undefined on input line 131.
+LaTeX Warning: Citation 'pkcs' on page 71 undefined on input line 131.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--134
@@ -2617,8 +2563,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--137
 
 Underfull \vbox (badness 2512) has occurred while \output is active []
 
- [81]
-<Pictures/EME-OAEP.png, id=1195, 599.23875pt x 508.90125pt>
+ [71]
+<Pictures/EME-OAEP.png, id=1008, 599.23875pt x 508.90125pt>
 File: Pictures/EME-OAEP.png Graphic file (type png)
 
 <use Pictures/EME-OAEP.png>
@@ -2649,7 +2595,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 ) (./cryptography-guide-chapters/chapter3_cryptography_guide.tex
-<Pictures/SHA-1-wiki.png, id=1196, 1284.8pt x 1337.99875pt>
+<Pictures/SHA-1-wiki.png, id=1009, 1284.8pt x 1337.99875pt>
 File: Pictures/SHA-1-wiki.png Graphic file (type png)
 
 <use Pictures/SHA-1-wiki.png>
@@ -2657,10 +2603,10 @@ Package pdftex.def Info: Pictures/SHA-1-wiki.png used on input line 8.
 (pdftex.def)             Requested size: 141.32843pt x 147.18031pt.
 
 
-LaTeX Warning: Citation 'sha-1-wiki' on page 82 undefined on input line 13.
+LaTeX Warning: Citation 'sha-1-wiki' on page 72 undefined on input line 13.
 
 
-LaTeX Warning: Citation 'sha-1-slideshare' on page 82 undefined on input line 1
+LaTeX Warning: Citation 'sha-1-slideshare' on page 72 undefined on input line 1
 5.
 
 
@@ -2668,22 +2614,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--18
 
  []
 
-[82 <./Pictures/EME-OAEP.png> <./Pictures/SHA-1-wiki.png>]
-<Pictures/SHA-1.png, id=1209, 814.04124pt x 349.305pt>
+[72 <./Pictures/EME-OAEP.png> <./Pictures/SHA-1-wiki.png>]
+<Pictures/SHA-1.png, id=1021, 814.04124pt x 349.305pt>
 File: Pictures/SHA-1.png Graphic file (type png)
 
 <use Pictures/SHA-1.png>
 Package pdftex.def Info: Pictures/SHA-1.png used on input line 23.
 (pdftex.def)             Requested size: 244.21425pt x 104.7923pt.
 
-<Pictures/SHA1-init.png, id=1210, 661.47125pt x 241.90375pt>
+<Pictures/SHA1-init.png, id=1022, 661.47125pt x 241.90375pt>
 File: Pictures/SHA1-init.png Graphic file (type png)
 
 <use Pictures/SHA1-init.png>
 Package pdftex.def Info: Pictures/SHA1-init.png used on input line 29.
 (pdftex.def)             Requested size: 198.4429pt x 72.57167pt.
 
-<Pictures/SHA-1-k.png, id=1211, 290.08376pt x 161.60374pt>
+<Pictures/SHA-1-k.png, id=1023, 290.08376pt x 161.60374pt>
 File: Pictures/SHA-1-k.png Graphic file (type png)
 
 <use Pictures/SHA-1-k.png>
@@ -2694,14 +2640,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 
  []
 
-[83 <./Pictures/SHA-1.png> <./Pictures/SHA1-init.png> <./Pictures/SHA-1-k.png>]
-<Pictures/SHA-1-P.png, id=1232, 684.5575pt x 297.11pt>
+[73 <./Pictures/SHA-1.png> <./Pictures/SHA1-init.png> <./Pictures/SHA-1-k.png>]
+<Pictures/SHA-1-P.png, id=1045, 684.5575pt x 297.11pt>
 File: Pictures/SHA-1-P.png Graphic file (type png)
 
 <use Pictures/SHA-1-P.png>
 Package pdftex.def Info: Pictures/SHA-1-P.png used on input line 57.
 (pdftex.def)             Requested size: 342.27791pt x 148.55463pt.
-)) [84 <./Pictures/SHA-1-P.png>]
+)) [74 <./Pictures/SHA-1-P.png>]
 \openout2 = `bibliography.aux'.
 
  (./bibliography.tex
@@ -2723,14 +2669,14 @@ Package biblatex Warning: Type 'misc' not found on input line 20.
 
 LaTeX Warning: Empty bibliography on input line 20.
 
-) [85
+) [75
 
 
 
 ]
 \openout2 = `index.aux'.
 
- (./index.tex [86
+ (./index.tex [76
 
 
 
@@ -2742,9 +2688,8 @@ No file main.ind.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
- (./main.aux (./title.aux) (./cw.aux) (./table_of_content.aux) (./part1.aux)
-(./part2.aux) (./torspec.aux) (./netcomp.aux) (./cryptography_guide.aux)
-(./bibliography.aux) (./index.aux))
+ (./main.aux (./title.aux) (./table_of_content.aux) (./torspec.aux)
+(./netcomp.aux) (./cryptography_guide.aux) (./bibliography.aux) (./index.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 115.
 
@@ -2753,6 +2698,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -2764,36 +2712,30 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37125 strings out of 493029
- 671034 string characters out of 6136233
- 1206183 words of memory out of 5000000
- 39147 multiletter control sequences out of 15000+600000
- 137677 words of font info for 317 fonts, out of 8000000 for 9000
+ 36889 strings out of 493029
+ 668000 string characters out of 6136233
+ 1197165 words of memory out of 5000000
+ 39029 multiletter control sequences out of 15000+600000
+ 117955 words of font info for 278 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,15n,59p,10511b,3282s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,15n,57p,10511b,3282s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.175} has been referenced but does not ex
 ist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
 texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/avantgar/uagd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/avantg
-ar/uagk8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on main.pdf (86 pages, 4680448 bytes).
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/avantgar/uagk8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (76 pages, 4632807 bytes).
 PDF statistics:
- 1606 PDF objects out of 1728 (max. 8388607)
- 1308 compressed objects within 14 object streams
- 581 named destinations out of 1000 (max. 500000)
- 68159 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1332 PDF objects out of 1440 (max. 8388607)
+ 1091 compressed objects within 11 object streams
+ 514 named destinations out of 1000 (max. 500000)
+ 55732 words of extra memory for PDF output out of 61914 (max. 10000000)
 
