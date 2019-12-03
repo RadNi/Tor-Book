@@ -12,45 +12,49 @@ In section \ref{sec:AES} we provide some notes about AES counter mode. Tor usage
 For a public-key cipher, uses RSA with 1024-bit keys and a fixed exponent of 65537 and OAEP-MGF1 padding format, with SHA-1 as its digest function. Further information about RSA explained in section \ref{sec:RSA}.
 
 %TODO @radni add ECC and Diffie Hellman and ... documentation here
-%src/lib/crypt_ops/crypto_curve25519.c +190 curve25519 key generation
-%   We also use the Curve25519 group and the Ed25519 signature format in
-%   several places.
-%
-%   For Diffie-Hellman, unless otherwise specified, we use a generator
-%   (g) of 2.  For the modulus (p), we use the 1024-bit safe prime from
-%   rfc2409 section 6.2 whose hex representation is:
-%
-%     "FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E08"
-%     "8A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B"
-%     "302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9"
-%     "A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE6"
-%     "49286651ECE65381FFFFFFFFFFFFFFFF"
-%
-%   As an optimization, implementations SHOULD choose DH private keys (x) of
-%   320 bits.  Implementations that do this MUST never use any DH key more
-%   than once.
-%   [May other implementations reuse their DH keys?? -RD]
-%   [Probably not. Conceivably, you could get away with changing DH keys once
-%   per second, but there are too many oddball attacks for me to be
-%   comfortable that this is safe. -NM]
-%
-%   For a hash function, unless otherwise specified, we use SHA-1.
-%
-%   KEY_LEN=16.
-%   DH_LEN=128; DH_SEC_LEN=40.
-%   PK_ENC_LEN=128; PK_PAD_LEN=42.
-%   HASH_LEN=20.
-%
-%   We also use SHA256 and SHA3-256 in some places.
-%
-%   When we refer to "the hash of a public key", unless otherwise
-%   specified, we mean the SHA-1 hash of the DER encoding of an ASN.1 RSA
-%   public key (as specified in PKCS.1).
-%
-%   All "random" values MUST be generated with a cryptographically
-%   strong pseudorandom number generator seeded from a strong entropy
-%   source, unless otherwise noted.
+\begin{lstlisting}
 
+src/lib/crypt_ops/crypto_curve25519.c +190 curve25519 key generation
+
+
+   We also use the Curve25519 group and the Ed25519 signature format in
+   several places.
+
+   For Diffie-Hellman, unless otherwise specified, we use a generator
+   (g) of 2.  For the modulus (p), we use the 1024-bit safe prime from
+   rfc2409 section 6.2 whose hex representation is:
+
+     "FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E08"
+     "8A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B"
+     "302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9"
+     "A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE6"
+     "49286651ECE65381FFFFFFFFFFFFFFFF"
+
+   As an optimization, implementations SHOULD choose DH private keys (x) of
+   320 bits.  Implementations that do this MUST never use any DH key more
+   than once.
+   [May other implementations reuse their DH keys?? -RD]
+   [Probably not. Conceivably, you could get away with changing DH keys once
+   per second, but there are too many oddball attacks for me to be
+   comfortable that this is safe. -NM]
+
+   For a hash function, unless otherwise specified, we use SHA-1.
+
+   KEY_LEN=16.
+   DH_LEN=128; DH_SEC_LEN=40.
+   PK_ENC_LEN=128; PK_PAD_LEN=42.
+   HASH_LEN=20.
+
+   We also use SHA256 and SHA3-256 in some places.
+
+   When we refer to "the hash of a public key", unless otherwise
+   specified, we mean the SHA-1 hash of the DER encoding of an ASN.1 RSA
+   public key (as specified in PKCS.1).
+
+   All "random" values MUST be generated with a cryptographically
+   strong pseudorandom number generator seeded from a strong entropy
+   source, unless otherwise noted.
+\end{lstlisting}
 %TODO @radni src/lib/crypto_ops/crypto_rand.c
 
 

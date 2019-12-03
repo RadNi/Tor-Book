@@ -1,0 +1,124 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nyt/global}
+    \entry{sha-1-slideshare}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e1cbd5583f82e48efb9d64af1890fdf2}{%
+           family={Agarwal},
+           family_i={A\bibinitperiod},
+           given={Vishakha},
+           given_i={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1cbd5583f82e48efb9d64af1890fdf2}
+      \strng{fullhash}{e1cbd5583f82e48efb9d64af1890fdf2}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.slideshare.net/VishakhaAgarwal4/secure-hash-algorithm}}
+      \field{note}{[Online; accessed 22-Feb-2019]}
+      \field{title}{{Secure Hash Algorithm}}
+      \field{year}{2015}
+    \endentry
+    \entry{tor_slideshare}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.slideshare.net/Abhinav_Biswas/are-tor-hidden-services-really-hidden-demystifying-hs-directory-surveillance-by-injecting-decoys-inside-tor}}
+      \field{note}{Accessed: 2018-04-21}
+      \field{title}{Are TOR Hidden Services really hidden? Demystifying HS Directory surveillance by injecting Decoys inside TOR!}
+    \endentry
+    \entry{ciphersuit-wiki}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Cipher_suite}}
+      \field{note}{[Online; accessed 27-Feb-2019]}
+      \field{title}{{Cipher suit}}
+      \field{year}{2019}
+    \endentry
+    \entry{tor_paper}{article}{}
+      \name{author}{1}{}{%
+        {{hash=025d7195d78e5946ecee627b644624bd}{%
+           family={{Dingledine,\bibnamedelimb Roger}},
+           family_i={D\bibinitperiod},
+           suffix={{Mathewson,\bibnamedelimb Nick}},
+           suffix_i={M\bibinitperiod},
+           given={{Syverson,\bibnamedelimb Paul}},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{025d7195d78e5946ecee627b644624bd}
+      \strng{fullhash}{025d7195d78e5946ecee627b644624bd}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tor: The Second-Generation Onion Router}
+      \field{year}{2004}
+    \endentry
+    \entry{crl_rfc}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tools.ietf.org/html/rfc5280}}
+      \field{note}{[Online; accessed 27-Feb-2019]}
+      \field{title}{{Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile}}
+      \field{year}{2008}
+    \endentry
+    \entry{stackDNS}{misc}{}
+      \field{sortinit}{o}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tor.stackexchange.com/questions/711/onion-domains-dns-lookup}}
+      \field{note}{Accessed: 2018-04-21}
+      \field{title}{.onion Domains DNS lookup}
+    \endentry
+    \entry{pkcs}{misc}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-1/pkcs-1v2-1.pdf}}
+      \field{note}{[Online; accessed 22-Feb-2019]}
+      \field{title}{{PKCS 1 v2.1: RSA Cryptography Standard}}
+      \field{year}{2002}
+    \endentry
+    \entry{sha-1-wiki}{misc}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/SHA-1}}
+      \field{note}{[Online; accessed 22-Feb-2019]}
+      \field{title}{{SHA-1}}
+      \field{year}{2019}
+    \endentry
+    \entry{TLS-meduim}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://medium.com/@iphelix/tls-ssl-protocol-84a1ecef54bd}}
+      \field{note}{[Online; accessed 27-Feb-2019]}
+      \field{title}{{TLS/SSL Protocol}}
+      \field{year}{2019}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
